@@ -7,6 +7,7 @@
 \usepackage[most]{tcolorbox}
 \usepackage{amsmath}
 \usepackage{multicol}
+\usepackage{multirow}
 \usepackage{pifont}
 \usepackage{enumitem}
 \usepackage{bbding}
@@ -38,8 +39,8 @@
 \NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
 
 %在此处进行基本信息修改
-\newcommand{\sCourse}{计算机系统结构}   %课程名
-\newcommand{\nTime}{1}             %作业次数
+\newcommand{\sCourse}{机器学习}   %课程名
+\newcommand{\nTime}{2}             %作业次数
 \newcommand{\sName}{黄昊}           %学生姓名
 \newcommand{\sNumber}{20204205}     %学号
 
@@ -50,37 +51,63 @@
 \pagestyle{fancy}
 \fancyhead[C]{\today}
 
-\begin{document}
+\newcommand{\homeworkTitle}{
     \setcounter{answercnt}{0}
     %标题部分修改
     \begin{center}
         \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
         \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
-    \end{center}
+    \end{center}}
 
-\answer[\textbf{\textsf{1.1}}] 
-\subanswer[a.] $Die\ yield=\frac{1}{(1+3.89\times 0.003)^{13.5}}\times100\%=98.846\%$
+\begin{document}
+    \homeworkTitle
+    选择题目\answer[2.1]\answer[2.3]\answer[2.5]\answer[2.7]\answer[2.8]\answer[2.9]
 
-\subanswer[b.] 因为其制程较大，加工时不易发生故障，且密度相对较小。
+    \answer[2.1]
+    正、反例各抽70\%的样本，那么共有$C_{500}^{150}C_{500}^{150}$种划分方式。
 
+    \answer[2.3]
+    由公式(2.10)和$BEP$的定义可知，两者无直接关系。因为$BEP$规定了$BEP=P=R$，但$F1$对P和
+    R没有具体规定大小关系，不可直接比较。
 
-\answer[\textbf{\textsf{1.9}}]
-\subanswer[a.] $Power\ save=1-\frac{C\times V^2\times 2f}{C\times V^2\times f}\times 100\%=50\%$
+    \answer[2.5]
+    考虑式(2.20)与式(2.21)
 
-\subanswer[b.] $Power\ save=1-\frac{C\times (\frac12V)^2\times f}{C\times V^2\times f}\times 100\%=75\%$
+    \answer[2.7]
 
-即节省了75\%的能量。
+    \answer[2.8]
+    min-max规范化的\textbf{优点}是计算简单，当有新元素加入时，只要不是最值，均可以实现O(1)的
+    计算；适合在线处理；\textbf{缺点}在于受最值影响大，若样本含有离群点且未作处理将会使其他正
+    常值规范化后所得到的值不合理；
 
-\answer[\textbf{\textsf{1.15}}] \subanswer[a.] $speedup=(50\%\times 10+50\%)/(100\%)=5.5$
+    z-score规范化的\textbf{优点}在于鲁棒性强，受极端值影响小；\textbf{缺点}在于每次新加入点
+    后都需要重新计算，复杂度为O(n)，只适合离线处理。
 
-\subanswer[b.] 令x为原来的执行时间，则：
+    \answer[2.9]
+    卡方检验在比较两个学习器的性能时的步骤如下：
 
-\begin{equation*}
-    \begin{aligned}
-        1-x&=x/10\\
-        x&=10/11
-    \end{aligned}
-\end{equation*}
-即约占了0.91的比例。
+    首先对符号做如下约定：
+    \begin{table}[htbp]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \multirow{2}{*}{算法B}&\multicolumn{2}{c|}{算法A}\\
+            \cline{2-3}
+            &正确&错误\\
+            \hline
+            正确&$\epsilon_{00}$&$\epsilon_{01}$\\
+            \hline
+            错误&$\epsilon_{10}$&$\epsilon_{11}$\\
+            \hline
+        \end{tabular}
+    \end{table}
 
+    使用如下统计量：
+    \begin{equation*}
+        \tau_{\chi^2}=\frac{(|\epsilon_{01}-\epsilon_{10}|-1)^2}{\epsilon_{10}+\epsilon_{01}}
+    \end{equation*}
+    
+    该统计量服从自由度为1的卡方分布。给定显著度$\alpha$，当上述变量小于该值则不能拒绝假设，
+    认为两个学习器的效果没有显著差异；反之则拒绝，认为有明显差异。
+    
 \end{document}
