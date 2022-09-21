@@ -1,0 +1,121 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{机器学习}   %课程名
+\newcommand{\nTime}{3}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+\homeworkTitle
+选择\answer[3.1]\answer[3.2]\answer[3.3]\answer[3.7]\answer[3.9].
+
+\answer[3.1]
+b被确认是一个常数，与输入无关时。此时对线性模型进行变换：$\boldsymbol{y}
+_{new}=\boldsymbol{y}_{old}-{b}=\omega \boldsymbol{x}$
+后即可不考虑偏置项${b}$
+
+\answer[3.2]
+\begin{equation*}
+\begin{aligned}    
+y&=\frac{1}{1+e^{-\boldsymbol{w}^T\boldsymbol{x}+{b}}}\\
+\frac{\partial y}{\partial \boldsymbol{w}}&=-(1+e^{-\boldsymbol{w}
+^T\boldsymbol{x}+{b}})^{-2}·(e^{-\boldsymbol{w}^T\boldsymbol
+{x}+{b}})·(-x)\\
+&={x(\frac{1}{y}-1)}{y^2}\\
+&=x(y-y^2)\\
+\frac{\partial^2 y}{\partial w\partial w^T}&=xx^T(1-2y)(y-y^2)
+\end{aligned}
+\end{equation*}
+由半正定矩阵定义易知$xx^T$是半正定的。又因为$(1-2y)(y-y^2)$显然在$y=1/2$时为分界
+点，则Hessian矩阵不能在y的取值范围内一直是半正定的，从而目标函数是非凸的。
+
+$$
+\begin{aligned}    
+    l(\beta)&=\sum_{i=1}^{m}(-y_i\beta^T\hat{x}_i+\ln(1+e^{\beta^T\hat{x}_i}))\\
+    \frac{\partial l}{\partial \beta}&=\sum_{i=1}^m(-y_i\hat {x}_i+\frac{\hat{x}_ie^{\beta^T\hat {x}_i}}{1+e^{\beta^T\hat{x}_i}})\\
+    &=\sum_{i=1}^m((1-y_i)\hat {x}_i-\frac{\hat{x}_i}{1+e^{\beta^T\hat{x}_i}})\\
+    \frac{\partial^2 l}{\partial \beta\partial \beta^T}&=
+    \sum_{i=1}^m(\hat{x_i}^2(1+e^{\beta^T\hat{x}_i})^{-2}e^{\beta^T\hat{x}_i})
+\end{aligned}
+$$
+显然Hessian是正定的，故对数似然函数函数是凸的。
+
+\answer[3.3]
+
+\begin{lstlisting}[language=python]
+Hello
+\end{lstlisting}
+
+\answer[3.7]
+由于ECOC二元码在长度为9的情况下，最大海明距离为9，则满足最优性的编码中，
+类与类之间\textbf{同时}能够满足的最大的海明距离为6，编码策略为：
+
+\begin{itemize}
+    \item 110110110
+    \item 101101101
+    \item 011011011
+    \item 000000000
+\end{itemize}
+
+下面给出构造过程：考虑码长为3，类别为4的情况，其最优意义下（即每条编码的距离尽量远）的编码为：000，011，101，110。容易验证
+最大的海明距离为6。将此种编码重复三次，就得到了码长为9的情况。容易验证，码长为3的情况下，此组合一定是\textbf{唯一}最优解（不考虑对偶情况，即0，1互换），从而证明码长为9的序列，能同时满足的最大海明距离为6。
+
+\answer[3.9]
+因为对于OvR和MvM来说，不同类的处理方法相同，由于对称性，不平衡性产生的影响
+可以相互抵消。
+
+\end{document}
