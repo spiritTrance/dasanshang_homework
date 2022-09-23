@@ -22,6 +22,12 @@ feature=np.array([
 
 label=np.concatenate((np.ones((8,1),dtype=int),np.zeros((9,1),dtype=int)))
 
-w=np.array([random(),random()]).reshape(1,2)
+w=np.array([random(),random()]).reshape(2,1)
 b=np.array(random()).reshape(1,1)
 
+beta=np.concatenate((w,b),axis=0)
+sampleNum=feature.data.shape[0]
+x=np.concatenate((feature,np.ones(sampleNum).reshape(sampleNum,1)),axis=1)
+
+def beta_sec_diff():
+    
