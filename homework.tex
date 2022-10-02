@@ -21,6 +21,18 @@
 \usepackage[ruled,linesnumbered]{algorithm2e}
 \usepackage{algorithmic}
 
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
 
 %定义题目计数器和命令
 \newcounter{questioncnt}
@@ -41,10 +53,10 @@
 \NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
 
 %在此处进行基本信息修改
-\newcommand{\sCourse}{机器学习}   %课程名
-\newcommand{\nTime}{4}             %作业次数
-\newcommand{\sName}{黄昊}           %学生姓名
-\newcommand{\sNumber}{20204205}     %学号
+\newcommand{\sCourse}{课程名}   %课程名
+\newcommand{\nTime}{9}             %作业次数
+\newcommand{\sName}{spiritTrance}           %学生姓名
+\newcommand{\sNumber}{20204900}     %学号
 
 %页边距设置
 \usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
@@ -62,45 +74,45 @@
     \end{center}}
 
 \begin{document}
-\homeworkTitle
-\answer[4.1]
-显然成立：构造这样一颗决策树：第一层判断特征向量的第一个分量，第二层判断第二个...
-以此类推。由于数据各不相同，故这样构造出来1决策树，必然能分到一个叶节点，且只有一
-个数据符合。根据这个构造方法，每个数据到达叶节点的路径各不相同，且一定完全符合（因
-为各不冲突），故训练误差为0.
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
 
-\answer[4.2]
-把训练误差作为训练准则容易出现泛化能力差的问题。
+% 本模板提供了两种模式：抄录题目和不抄录题目的，可以自定义题号
+% 第一个是带抄录题目的：用法如下
+\question{\textcolor{red}{看注释进行相应修改，包括页边距和顶部的基本信息}}
+\subquestion{1+1}
+\subsubquestion{1+1=?}
+等于3
 
-\answer[4.3]
+% 【注意回答完一个问题后，空一行再写新问题】
+\subsubquestion{1+2=?}
+等于4
 
+%第二个模式是只带题号的，不抄写题目，用法如下
+\answer 第一题这样回答
 
-\answer[4.4]
+\subanswer 第一题第一小问这样回答
 
+\subsubanswer 第一题第一小问第一小问这样回答
 
-\answer[4.8]
-算法见下页。
-\begin{algorithm}
-\caption{决策树生成算法——基于广度优先搜索}\label{algorithm}
-\KwData{训练集D=\{$(x_1,y_1),(x_2,y_2),\dots,(x_m,y_m)$\}\\\qquad\ \ \ 属性集A=\{$a_1,a_2,\dots,a_d$\}\\\qquad\ \ \ 最大高度 MaxDepth}
-\KwResult{决策树$T$}
-生成节点$N$，节点信息包括数据集$D$，属性集$A$，高度信息$h$；\\
-记录决策树T的根为N；\\
-生成节点队列Q；\\
-将N压入队列Q的队尾；\\
-\While{节点队列Q非空}{
-    从节点队列Q中取出队首节点N；\\
-    \If{节点N.D中样本全属于同一类别C}{将N标记为C类叶节点；\textbf{continue}；}
-    \If{节点N.h已达到MaxDepth \textbf{OR} $N.A=\emptyset$ \textbf{OR} N.D中样本在N.A上的取值相同}{将N标记为叶节点，其类别标记为N.D中样本最多的类；\textbf{continue}；}
-    从N.A中选择最优划分属性$a_*$；\\
-    \For{$a_*$的每一个值$a_*^v$}{
-        为N生成一个分支；令$D_v$为D中在$a_*$上取值为$a_*^v$的样本子集；\\
-        \eIf{$D_v$为空}
-        {将分支节点标记为叶节点，其类别表及为D中样本最多的类；continue；}
-        {生成节点$N_s$，节点信息包括数据集$D_v$，属性集$A$\textbackslash$\{a_*\}$，高度信息$N.h+1$；\\将$N_s$压入节点队列Q}
-    }
-}
-\textbf{return} 决策树T
-\end{algorithm}
-如果属性取值较多但属性少，BFS比DFS空间消耗更大；若属性多但属性值少，则DFS比BFS空间消耗更大，DFS有爆栈的风险。
+%下面是自定义题号示例，注意题号是方括号
+\question[A]{第一个问题}
+\subquestion[A.A]{第一个问题第一小问}
+\subsubquestion[A.A.A]{第一个问题第一小问第一小问}
+回答1号
+
+%记住还是要空一行
+\subsubquestion[A.A.B]{第一个问题第一小问第一小问}
+回答2号
+
+\answer[1] 第一个回答
+
+\subanswer[(1)] 第一个回答的子回答
+
+%记住要空一行，不包括注释
+\subsubanswer[A] 第一个回答的子回答的子回答
 \end{document}
