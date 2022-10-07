@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1664675547 "c:/Users/15781/Desktop/作业/机器学习/ch4/黄昊-20204205-机器学习-第四次作业.tex" "黄昊-20204205-机器学习-第四次作业.pdf" "黄昊-20204205-机器学习-第四次作业" 1664675547
-  "c:/Users/15781/Desktop/作业/机器学习/ch4/黄昊-20204205-机器学习-第四次作业.tex" 1664675542 24756 b696fa861f8acc3f9f186abb6cf5e34d ""
+["pdflatex"] 1664689308 "c:/Users/15781/Desktop/作业/机器学习/ch4/黄昊-20204205-机器学习-第四次作业.tex" "黄昊-20204205-机器学习-第四次作业.pdf" "黄昊-20204205-机器学习-第四次作业" 1664689311
+  "c:/Users/15781/Desktop/作业/机器学习/ch4/黄昊-20204205-机器学习-第四次作业.tex" 1664689307 25315 4c2aae66ae5fffc8d9cfc308754b7ea2 ""
   "c:/Windows/Fonts/msyh.ttc" 1622894706 19647736 ff2e53a6131130a07589812ea5b5b0d0 ""
   "c:/Windows/Fonts/simfang.ttf" 1622557740 10578152 37e609660535d9b42db7ba1cc80eff88 ""
   "c:/Windows/Fonts/simkai.ttf" 1622557740 11787328 76179557c160634a761c845ea111c893 ""
@@ -173,7 +173,6 @@
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9a.tfm" 1662382887 1172 37a3cd36cf03e67f393bee80b1370d05 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong9e.tfm" 1662382887 1172 e797949130fb017e573d6826989dff50 ""
   "c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisongff.tfm" 1662382887 1172 156175f4eaa9daea4e21b890ac9fafb8 ""
-  "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1662381251 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1662381251 35752 024fb6c41858982481f6968b5fc26508 ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1662381251 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb" 1662381251 24287 6b803fa9eb1ddff9112e00519b09dd9e ""
@@ -360,7 +359,6 @@
   "c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex" 1662382601 12747 87e8825bd9ec8890b502f1b967790194 ""
   "c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex" 1662382601 10268 aea9efa85cfd20ae6815db478bbfc844 ""
   "c:/texlive/2022/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty" 1662382601 90399 93200a4832e517564b5aa5dc46e12177 ""
-  "c:/texlive/2022/texmf-dist/tex/latex/tools/.tex" 1662382712 1386 0ccf2e96cd218ae177ee5f970c4a1298 ""
   "c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty" 1662382712 12694 6c23725d50ab9d1e2d3ce482c58ffcf3 ""
   "c:/texlive/2022/texmf-dist/tex/latex/tools/bm.sty" 1662382712 13197 df0fe9a9695763546b59e02a008447b3 ""
   "c:/texlive/2022/texmf-dist/tex/latex/tools/multicol.sty" 1662382712 32262 2bb622a0aa56c4a7a5cbdfe9d122c15a ""
@@ -380,8 +378,12 @@
   "c:/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1662382911 4448422 53302d27d6d34c8e3e97ce3a8b4bdfa7 ""
   "c:/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1662382963 2826462 7d6b07d0905010b48acf139c584c9b1c ""
   "c:/texlive/2022/texmf.cnf" 1662382896 713 e69b156964470283e0530f5060668171 ""
-  "黄昊-20204205-机器学习-第四次作业.aux" 1664675547 34 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "黄昊-20204205-机器学习-第四次作业.tex" 1664675542 24756 b696fa861f8acc3f9f186abb6cf5e34d ""
+  "images/4.3.png" 1664688333 54944 b61424244a61ea808a3989284a978e69 ""
+  "images/4.4.1.png" 1664688349 69136 0b7246359fd98331d05aeeb5578bfd6f ""
+  "images/4.4.2.png" 1664688358 2400 d60dcc6104efcb548a6b83a3967dac30 ""
+  "images/4.4.3.png" 1664688600 24757 1d72a898aad90b12b9727c75b8445563 ""
+  "黄昊-20204205-机器学习-第四次作业.aux" 1664689310 879 85921821a80d720360ba39efad9c97e2 "pdflatex"
+  "黄昊-20204205-机器学习-第四次作业.tex" 1664689307 25315 4c2aae66ae5fffc8d9cfc308754b7ea2 ""
   (generated)
   "黄昊-20204205-机器学习-第四次作业.aux"
   "黄昊-20204205-机器学习-第四次作业.log"

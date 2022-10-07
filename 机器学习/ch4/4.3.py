@@ -1,6 +1,5 @@
 from math import log
 import copy
-from statistics import mode
 
 from matplotlib.dates import DAILY
 
@@ -158,10 +157,19 @@ class DecisionTree:
         for son in node.son:
             tot_right_son += self.post_prun(son,dataPraser)
         attr, tot_right_fa = dataPraser.getMaximumClassAndNum(node.validDataIndex)
-        print(tot_right_fa,tot_right_son,node.criteriaBranch,node.criteria)
-        if (tot_right_fa >= tot_right_son):
+        # print(tot_right_fa,tot_right_son,node.criteriaBranch,node.criteria)
+        if (tot_right_fa > tot_right_son):
             node.son = []
+            node.category = attr
             return tot_right_fa
+        elif (tot_right_fa == tot_right_son):
+            mapping={}
+            for son in node.son:
+                cat = son.category
+                mapping[cat] = 1 if mapping.get(cat) is None else mapping[cat]+1
+            if (len(mapping)==1):       #剪枝
+                node.son = []
+                node.category = attr
         return tot_right_son
 
     def pre_prun(self, node: TreeNode, dataPraser: DataWrapperAndProcessor):
@@ -179,6 +187,7 @@ class DecisionTree:
         if (tot_right_fa >= tot_right_son):
             # print(node.criteriaBranch,node.criteria)
             node.son = []
+            node.category = attr
         for son in node.son:
             self.pre_prun(son, dataPraser)
         return tot_right_son
@@ -196,13 +205,13 @@ class DecisionTree:
         if node.isLeaf()==True:
             return node.category
         attrIdx = 0
-        for idx, attr in enumerate(title):
+        for idx_attr, attr in enumerate(title):
             if attr==node.criteria:
-                attrIdx = idx
+                attrIdx = idx_attr
                 break
-        for idx, cat in enumerate(node.criteriaBranch):
+        for idx_son, cat in enumerate(node.criteriaBranch):
             if sample[attrIdx] == cat:
-                return self.__predict(idx , sample, title, node.son[idx])
+                return self.__predict(idx , sample, title, node.son[idx_son])
     
     def tagClean(self, node: TreeNode):
          node.validDataIndex = []
@@ -289,15 +298,16 @@ print("========4.4========")
 dataPraser_train=DataWrapperAndProcessor(feature_train,label_train,feature_title)
 dataPraser_test=DataWrapperAndProcessor(feature_test,label_test,feature_title)
 # origin
+optLoss="gini"
 print("origin tree")
 model=DecisionTree(dataPraser_train)
-model.buildTree(model.root, optLoss="gini")
+model.buildTree(model.root, optLoss=optLoss)
 model.printTree(model.root)
 model.printAcc(dataPraser_test)
 # pre prunning
 print("pre prunning")
 model=DecisionTree(dataPraser_train)
-model.buildTree(model.root, optLoss="gini")
+model.buildTree(model.root, optLoss=optLoss)
 model.reTag(model.root, dataPraser_test)
 model.pre_prun(model.root, dataPraser_test)
 model.printTree(model.root)
@@ -305,7 +315,7 @@ model.printAcc(dataPraser_test)
 # post prunning
 print("post prunning")
 model=DecisionTree(dataPraser_train)
-model.buildTree(model.root, optLoss="gini")
+model.buildTree(model.root, optLoss=optLoss)
 model.reTag(model.root, dataPraser_test)
 model.post_prun(model.root, dataPraser_test)
 model.printTree(model.root)
