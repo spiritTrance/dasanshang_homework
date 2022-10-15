@@ -4,34 +4,7 @@
 3. 将算法应用于西瓜数据集、鸢尾花数据集分类问题。
 '''
 import numpy as np
-
-class DataSet:
-    def __init__(self, feature, label, title):
-        self.__feature = feature
-        self.__label = label
-        self.__title = title
-        self.__sample_num = len(label)
-        self.__convertedFeature = None
-        self.__convertedTitle = None
-        
-    def getFeature(self):
-        return self.__feature
-    
-    def getLabel(self):
-        return self.__label
-    
-    def getTitle(self):
-        return self.__title
-    
-    def getSampleNum(self):
-        return self.__sample_num
-    
-    def str2Onehot():
-        pass
-    
-    def Onehot2str():
-        pass
-        
+from utils import DataClass, DataSet
 
 class Logistic:
     def __init__(self, input_size: int) -> None:
@@ -88,3 +61,4 @@ class Logistic:
             prob_1 = self.getPositiveProb(x)
             ans += - x_extend.dot(x_extend.T) * prob_1 * (1 - prob_1)
         return ans
+    
