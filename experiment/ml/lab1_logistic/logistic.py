@@ -4,7 +4,7 @@
 3. 将算法应用于西瓜数据集、鸢尾花数据集分类问题。
 '''
 import numpy as np
-from utils import DataClass, DataSet
+from utils.Data import DataClass, DataSet
 
 class Logistic:
     def __init__(self, input_size: int) -> None:
