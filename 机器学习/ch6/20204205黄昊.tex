@@ -138,11 +138,11 @@ ln\frac{y}{1-y} = \boldsymbol{\beta^T\phi (\hat{x})}
 $$
 相应地，极大似然函数变为：
 $$
-l(\beta) = \sum_{i=1}^{m}(-y_i\beta^T\phi{\hat{\boldsymbol{x}}}+ln(1+e^{\boldsymbol{\beta}^T\phi \hat{\boldsymbol{x}}}))
+l(\beta) = \sum_{i=1}^{m}(-y_i\beta^T\phi({\hat{\boldsymbol{x}})}+ln(1+e^{\boldsymbol{\beta}^T\phi (\hat{\boldsymbol{x}})}))
 $$
 由表示定理，有：
 $$
-ln\frac{y}{1-y}=h(\hat(\boldsymbol{x}))=\sum_{i=1}^m\alpha_i\kappa(\hat{\boldsymbol{x}},\hat{\boldsymbol{x}_i}) 
+ln\frac{y}{1-y}=h(\boldsymbol{\hat x})=\sum_{i=1}^m\alpha_i\kappa(\hat{\boldsymbol{x}},\hat{\boldsymbol{x}_i}) 
 $$
 因此，损失函数变为：
 $$

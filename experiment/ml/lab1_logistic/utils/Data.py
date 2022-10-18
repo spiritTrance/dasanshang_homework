@@ -1,11 +1,16 @@
 '''
 定义DataSet类，用于封装数据集，以及进行数据预处理
+定义DataClass枚举类，用于定义数据类型
 '''
 
+from email import iterators
+from typing import Iterator
 import numpy as np
 from enum import Enum
 import random
 from logging import warning
+
+from soupsieve import select
 
 class DataClass(Enum):  # 枚举类，定义数据类型
     value = 1   # 数值数据
@@ -117,9 +122,11 @@ class DataSet(object):
         注意传入的feature必须是一列，不能是多列。
         '''
         if dtype == DataClass.order:
-            newFeature = np.zeros(0,1)
+            newFeature = np.zeros((0,1))
             for i in feature:
-                newFeature = np.concatenate((newFeature, self.__orderMapping[attrName][i]), axis=0)
+                attrVal = i[0]
+                concatFeature = np.array([self.__orderMapping[attrName][attrVal]]).reshape(1,1)
+                newFeature = np.concatenate((newFeature, concatFeature), axis=0)
         elif dtype == DataClass.tag:
             attrNum = self.__tagMapping[attrName]["__info__"]["length"]
             newFeature = np.zeros((0, attrNum))
@@ -219,6 +226,13 @@ class DataSet(object):
         else:
             return zip(self.__feature, self.__label)
         
+    def getFeatureAndLabel(self, is_converted = True):
+        if is_converted == False:
+            return self.__feature, self.__label
+        elif self.__isConverted == False:
+            self.convertFeature()
+        return self.__convertedFeature, self.__label
+        
     def getTitle(self, is_converted = True):
         '''
         返回title
@@ -282,3 +296,86 @@ class DataSet(object):
         返回标签映射
         '''
         return self.__labelMapping
+    
+class DataSpliter(object):
+    @staticmethod
+    def __subClassDivision(feature: np.array, label: np.array, trainRatio = 0.7, is_shuffle = True):
+        tot = len(label)
+        train_tot = int(tot * trainRatio)
+        test_tot = tot - train_tot
+        if is_shuffle == True:
+            randIdx = [i for i in range(tot)]
+            random.shuffle(randIdx)
+            feature = feature[randIdx]
+            label = label[randIdx]
+        trainFeatureSet = feature[0: train_tot]
+        trainLabelSet = label[0: train_tot]
+        testFeatureSet = feature[train_tot:]
+        testLabelSet = label[train_tot:]
+        return trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet
+    
+    def __extractArray(lst: list):
+        s = set()
+        for i, j in lst:
+            s.add(j[0])
+        ans_feature = []
+        ans_label = []
+        for l in s:
+            subAns = list(filter(lambda x: x[1][0] == l, lst))
+            attrNum = subAns[0][0].data.shape[0]
+            arrAns = np.zeros((0, attrNum))
+            labAns = np.zeros((0, 1))
+            for i, j in subAns:
+                arrAns = np.concatenate((arrAns, i.reshape(1, attrNum)), axis=0)
+                labAns = np.concatenate((labAns, j.reshape(1,1)), axis=0)
+            ans_feature.append(arrAns)
+            ans_label.append(labAns)
+        return ans_feature, ans_label
+        
+    def trainAndTestSetSpliter_bareData(feature: np.array, label: np.array, trainRatio = 0.7, is_shuffle = True):
+        '''
+        注意label是二维的，不是一维的
+        是分层抽样
+        return trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet
+        '''
+        sampleNum, attrNum = feature.data.shape
+        lst = [(f, l) for f, l in zip(feature, label)]
+        lst.sort(key=lambda x:x[1])
+        featureLst, labelLst = DataSpliter.__extractArray(lst)
+        tot_trainFeatureSet = np.zeros((0, attrNum))
+        tot_trainLabelSet = np.zeros((0, 1))
+        tot_testFeatureSet = np.zeros((0, attrNum))
+        tot_testLabelSet = np.zeros((0, 1))
+        for f, l in zip(featureLst, labelLst):
+            trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.__subClassDivision(f, l ,trainRatio, is_shuffle)
+            tot_trainFeatureSet = np.concatenate((tot_trainFeatureSet, trainFeatureSet), axis = 0)
+            tot_trainLabelSet = np.concatenate((tot_trainLabelSet, trainLabelSet), axis = 0)
+            tot_testFeatureSet = np.concatenate((tot_testFeatureSet, testFeatureSet), axis = 0)
+            tot_testLabelSet = np.concatenate((tot_testLabelSet, testLabelSet), axis = 0)
+        if is_shuffle == True:
+            # 训练集
+            l = len(tot_trainLabelSet)
+            idx = [i for i in range(l)]
+            random.shuffle(idx)
+            tot_trainFeatureSet = tot_trainFeatureSet[idx]
+            tot_trainLabelSet = tot_trainLabelSet[idx]
+            # 测试集
+            l = len(tot_testLabelSet)
+            idx = [i for i in range(l)]
+            random.shuffle(idx)
+            tot_testLabelSet = tot_testLabelSet[idx]
+            tot_testFeatureSet = tot_testFeatureSet[idx]
+        return tot_trainFeatureSet, tot_trainLabelSet, tot_testFeatureSet, tot_testLabelSet
+    
+    @staticmethod
+    def trainAndTestSetSpliter_dataIter(data_iter: Iterator, trainRatio = 0.7, is_shuffle = True, isBatchDivided = False):
+        '''
+        return trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet
+        注意不是batch式的，懒狗还没写
+        '''
+        # TODO: 分batch的打乱怎么做
+        if isinstance(data_iter, Iterator):
+            raise Exception("Wrong data type: data_iter must be iterator!")
+        feature, label = data_iter
+        trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter(feature, label, trainRatio, is_shuffle)
+        return zip(trainFeatureSet, trainLabelSet), zip(testFeatureSet, testLabelSet)
