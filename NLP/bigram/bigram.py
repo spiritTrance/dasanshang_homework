@@ -26,8 +26,6 @@ def bigramCounting(ans: list) -> dict:      # 第一维是w_{i-1}的，第二维
     for txt in ans:
         for ch in txt:
             s.add(ch)
-    s.add("<BOS>")
-    s.add("<EOS>")
     dictionary = {}
     # 创建词典
     for ch in s:

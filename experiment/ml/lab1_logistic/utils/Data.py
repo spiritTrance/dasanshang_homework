@@ -379,3 +379,4 @@ class DataSpliter(object):
         feature, label = data_iter
         trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter(feature, label, trainRatio, is_shuffle)
         return zip(trainFeatureSet, trainLabelSet), zip(testFeatureSet, testLabelSet)
+    

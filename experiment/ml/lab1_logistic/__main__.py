@@ -9,13 +9,12 @@ from lab1_logistic.utils.Data import DataClass, DataSet, DataSpliter
 import numpy as np
 from sklearn.datasets import load_iris
 import logging
-from sklearn.model_selection import train_test_split
 
 if __name__ == "__main__":
     logging.disable(logging.WARNING)    # 禁用 DataSet 定义的 Logging
     
     # 西瓜数据集
-    ITER_NUM = 2000
+    ITER_NUM = 1000
     feature=[["青绿","蜷缩","浊响","清晰","凹陷","硬滑",0.697,0.46],
             ["乌黑","蜷缩","沉闷","清晰","凹陷","硬滑",0.774,0.376],
             ["乌黑","蜷缩","浊响","清晰","凹陷","硬滑",0.634,0.264],
@@ -56,45 +55,56 @@ if __name__ == "__main__":
     title_iris = ["sepal length in cm", "sepal width in cm", "petal length in cm", "petal width in cm"]
     dataset_iris = DataSet(feature_iris, label_iris, title_iris)
     feature_iris, label_iris = dataset_iris.getFeatureAndLabel()
-    trainFeatureSet, testFeatureSet, trainLabelSet, testLabelSet = train_test_split(feature_iris, label_iris, train_size = 0.66, random_state = 0)
-    # trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter_bareData(feature_iris, label_iris, is_shuffle = True, trainRatio = 0.7)
+    trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter_bareData(feature_iris, label_iris, is_shuffle = True, trainRatio = 0.7)
+    indexOfLabel0_1 = abs(trainLabelSet.reshape(len(trainLabelSet,)) - 0.5) < 0.5 + 1e-6
+    indexOfLabel0_2 = abs(trainLabelSet.reshape(len(trainLabelSet,)) - 1) > 1 - 1e-6
+    indexOfLabel1_2 = abs(trainLabelSet.reshape(len(trainLabelSet,)) - 1.5) < 0.5 + 1e-6
+    trainLabelSet0_1 = trainLabelSet[indexOfLabel0_1]
+    trainLabelSet0_2 = trainLabelSet[indexOfLabel0_2]
+    trainLabelSet1_2 = trainLabelSet[indexOfLabel1_2]
+    trainFeatureSet0_1 = trainFeatureSet[indexOfLabel0_1]
+    trainFeatureSet0_2 = trainFeatureSet[indexOfLabel0_2]
+    trainFeatureSet1_2 = trainFeatureSet[indexOfLabel1_2]
     mapping_0 = {0:1, 1:0, 2:0} # 0 作为正例
     mapping_1 = {0:0, 1:1, 2:0} # 1 作为正例
     mapping_2 = {0:0, 1:0, 2:1} # 2 作为正例
-    label_iris_0 = np.zeros((len(trainLabelSet), 1))
-    label_iris_1 = np.zeros((len(trainLabelSet), 1))
-    label_iris_2 = np.zeros((len(trainLabelSet), 1))
-    for idx, val in enumerate(trainLabelSet):
-        val = val[0]
-        label_iris_0[idx] = mapping_0[val]
-        label_iris_1[idx] = mapping_1[val]
-        label_iris_2[idx] = mapping_2[val]
-    # OvR多分类策略
-    model_iris_0 = Logistic(trainFeatureSet, label_iris_0)
-    model_iris_1 = Logistic(trainFeatureSet, label_iris_1)
-    model_iris_2 = Logistic(trainFeatureSet, label_iris_2)
+    def convertMapping(label, mapping):     # 标记正反例
+        for idx, val in enumerate(label):
+            val = int(val)
+            label[idx] = mapping[val]
+        return label
+    
+    trainLabelSet0_1 = convertMapping(trainLabelSet0_1, mapping_1)  # 将 0 转成 0（反例），1 转成 1（正例）
+    trainLabelSet0_2 = convertMapping(trainLabelSet0_2, mapping_2)  # 将 0 转成 0（反例），2 转成 1（正例）
+    trainLabelSet1_2 = convertMapping(trainLabelSet1_2, mapping_2)  # 将 1 转成 0（反例），2 转成 1（正例）
+    # OvO多分类策略
+    model_iris_0_1 = Logistic(trainFeatureSet0_1, trainLabelSet0_1)
+    model_iris_0_2 = Logistic(trainFeatureSet0_2, trainLabelSet0_2)
+    model_iris_1_2 = Logistic(trainFeatureSet1_2, trainLabelSet1_2)
     # 模型训练
-    OvR_LR = 0.005
-    model_iris_0.optimize(iter_num = ITER_NUM, lr = OvR_LR)
-    model_iris_1.optimize(iter_num = ITER_NUM, lr = OvR_LR)
-    model_iris_2.optimize(iter_num = ITER_NUM, lr = OvR_LR)
+    OvR_LR = 0.05
+    model_iris_0_1.optimize(iter_num = ITER_NUM, lr = OvR_LR, method = "gd")
+    model_iris_0_2.optimize(iter_num = ITER_NUM, lr = OvR_LR, method = "gd")
+    model_iris_1_2.optimize(iter_num = ITER_NUM, lr = OvR_LR, method = "gd")
     # 获取训练集准确率
-    acc_0 = model_iris_0.eval(trainFeatureSet, label_iris_0)
-    acc_1 = model_iris_1.eval(trainFeatureSet, label_iris_1)
-    acc_2 = model_iris_2.eval(trainFeatureSet, label_iris_2)
+    acc_0 = model_iris_0_1.eval(trainFeatureSet, trainLabelSet0_1)
+    acc_1 = model_iris_0_2.eval(trainFeatureSet, trainLabelSet0_2)
+    acc_2 = model_iris_1_2.eval(trainFeatureSet, trainLabelSet1_2)
     acc_search = [(acc_0, 0), (acc_1, 1), (acc_2, 2)]
     acc_search.sort(key = lambda x: x[0], reverse = True)   # 按照准确率从大到小排列，后续扫描从准确率大的开始比对
     # 开始进行预测
     acc = 0
     tot = len(testLabelSet)
+    modelLst = [model_iris_0_1, model_iris_0_2, model_iris_1_2]
     for X, y in zip(testFeatureSet, testLabelSet):
-        pred_0 = model_iris_0.pred(X)
-        pred_1 = model_iris_1.pred(X)
-        pred_2 = model_iris_2.pred(X)
-        pred = [pred_0, pred_1, pred_2]
-        for _ , l in acc_search:
-            if pred[l] == 1:
-                if l == y:
-                    acc += 1
-                break
+        y = int(y)
+        pred = [md.pred(X) for md in modelLst]
+        pred[0] = 0 if pred[0] == 0 else 1      # 从0-1表示的正反例 转换回类别，对应代码在77-79行
+        pred[1] = 0 if pred[1] == 0 else 2
+        pred[2] = 1 if pred[2] == 0 else 2
+        rec = [0, 0, 0]
+        for i in pred:
+            rec[i] += 1
+        if np.argmax(rec) == y:
+            acc += 1
     print("鸢尾花数据集上的训练轮数为：{:d}，训练集上的分类正确率为：{:.2%}".format(ITER_NUM, acc / tot))
