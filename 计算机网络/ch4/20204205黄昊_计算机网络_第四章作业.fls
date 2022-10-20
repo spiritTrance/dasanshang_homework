@@ -1219,6 +1219,8 @@ INPUT c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT c:/texlive/2022/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong20.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong64.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplro7t.tfm
 INPUT c:/texlive/2022/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
 INPUT c:/texlive/2022/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
@@ -1242,8 +1244,14 @@ INPUT c:/texlive/2022/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/mathpazo/fplmri.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong7b.tfm
+INPUT c:/texlive/2022/texmf-dist/fonts/tfm/zhmetrics/unisong/unisong7a.tfm
 INPUT c:/texlive/2022/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT 20204205黄昊_计算机网络_第四章作业.aux
+INPUT c:/Windows/Fonts/simsun.ttc
+INPUT c:/Windows/Fonts/simsun.ttc
+INPUT c:/Windows/Fonts/simsun.ttc
+INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
 INPUT c:/Windows/Fonts/simsun.ttc
