@@ -9,6 +9,7 @@ from lab1_logistic.utils.Data import DataClass, DataSet, DataSpliter
 import numpy as np
 from sklearn.datasets import load_iris
 import logging
+from matplotlib import pyplot as plt
 
 if __name__ == "__main__":
     logging.disable(logging.WARNING)    # 禁用 DataSet 定义的 Logging
@@ -45,6 +46,11 @@ if __name__ == "__main__":
     model_watermelon.optimize(lr = 0.3, iter_num = ITER_NUM, method="gd")
     acc = model_watermelon.eval(feature_watermelon, label_watermelon)
     print("西瓜数据集上的训练轮数为：{:d}，分类正确率为：{:.2%}".format(ITER_NUM, acc))
+    
+    lst = model_watermelon.getLossRec()
+    plt.plot(lst,'-y*')
+    plt.title("Loss curve")
+    plt.show()
     
     # 鸢尾花数据集
     ITER_NUM = 1000

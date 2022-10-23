@@ -12,6 +12,7 @@ class Logistic:
         self.__label = label.astype('float')
         self.__sample_num, self.__input_size = feature.data.shape
         self.__beta = np.random.rand(self.__input_size + 1, 1) * 20 - 10       # 将常数项 b 直接纳入里面
+        self.__loss = []
         
     def getPositiveProb(self, x: np.ndarray):
         x_extend = np.concatenate((x.reshape(self.__input_size, 1), np.ones((1, 1))),axis=0)
@@ -40,12 +41,14 @@ class Logistic:
         '''
         注意feature是一整批送进来的
         '''
+        self.__loss = []
+        self.__loss.append(float(self.__getMLEValue()))
         if not method in ["gd","newton"]:
             warn_str = "不存在 "+method+" 迭代算法，默认使用梯度下降法，学习率为: "+str(lr)
             warning(warn_str)
         for epoch in range(1, iter_num + 1):
             self.__step(lr, method)
-            
+            self.__loss.append(float(self.__getMLEValue()))
     
     def __step(self, lr = 1, method = "gd"):
         if method == "newton":
@@ -64,7 +67,7 @@ class Logistic:
         ans = 0
         for x, y in zip(self.__feature, self.__label):
             x_extend = np.concatenate((x.reshape(self.__input_size, 1), np.ones((1, 1))),axis=0)
-            ans += -y * self.__beta.T * x_extend + np.log(1 + np.exp(self.__beta.T * x_extend))
+            ans += -y * self.__beta.T.dot(x_extend) + np.log(1 + np.exp(self.__beta.T.dot(x_extend)))
         return ans
     
     def __getMLEValue_1d(self):       # 极大似然函数的一阶导数
@@ -98,3 +101,6 @@ class Logistic:
     def pred(self, feature: np.array):
         _pred = 1 if self.getLogit(feature) > 0 else 0
         return _pred
+    
+    def getLossRec(self):
+        return self.__loss
