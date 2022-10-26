@@ -127,12 +127,30 @@
     
 
     \answer[7.5]
-    对于最小化分类错误率的贝叶斯最优分类器 #TODO
-    
+    对于最小化分类错误率的贝叶斯最优分类器，有：
+    $$
+    \begin{aligned}
+        h^*(x) &= arg\max_{c\in y}P(c|x)\\
+        &=arg\max_{c\in y}P(x|c)P(c)\\
+        &= arg\max_{c\in y}\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c))P(c)\\
+        &= arg\max_{c\in y}\ln(\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c))P(c))\\
+        &= arg\max_{c\in y}-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c)+\ln P(c)\\
+        &= arg\max_{c\in y}x^T\Sigma^{-1}\mu_c-\frac{1}{2}\mu_c^T\Sigma^{-1}\mu_c+\ln P(c)
+    \end{aligned}
+    $$
+
+    对于二分类问题，贝叶斯决策边界可以表示为：
+    $$
+    g(x) = x^T\Sigma^{-1}(\mu_1-\mu_0)-\frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0)+\ln(\frac{P(1)}{P(0)})
+    $$
+
+    对于线性判别分析，投影界面$w=(\Sigma_0+\Sigma_1)^{-1}(\mu_1-\mu_0)$，两类别在投影面连线中点为：$w=\frac{1}{2}\Sigma^{-1}(\mu_1-\mu_0)w$，则LDA的决策边界为$g(x)=x^T\Sigma^{-1}(\mu_1-\mu_0)-\frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0)$，此时仅相差$\ln\frac{P(1)}{P(0)}$项，由贝叶斯学派的同等无知原则，令$P(1)=P(0)$，即可消去此项，从而得证。
+
 
     \answer[7.7]
 规定问题为\textbf{二分类}问题，样本有$d$个属性，在第$i$个属性上的取值种类个数为$n_i$个，则最好的情况为：每个样本有$d$个属性，每个属性都满足30个的最低要求，
-那么最少的个数为$2\times 30\times\max_{1\leq i\leq d}\{n_i\}= 60\max_{1\leq i\leq d}\{n_i\}$个。
+则最少个数为$2\times 30\times\max_{1\leq i\leq d}\{n_i\}= 60\max_{1\leq i\leq d}\{n_i\}$
+个。
 最坏的情况为：从第一个属性开始，选取的样本满足要求后，在第二个属性上的取
 值完全相同，第三个及之后的属性以此类推。
 不难发现最坏的样本个数为：
