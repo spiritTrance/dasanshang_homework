@@ -1,0 +1,31 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 26 23:59:51 2022
+# Process ID: 15532
+# Current directory: C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15772 C:\Users\15781\Desktop\作业\experiment\sysArch\lab1\doc\lab1_pred\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr
+# Log file: C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+# Journal file: C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr
+update_compile_order -fileset sources_1
+report_ip_status -name ip_status 
+report_ip_status -name ip_status 
+report_ip_status -name ip_status 
+set_property used_in_synthesis false [get_files  C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci]
+set_property used_in_synthesis true [get_files  C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci]
+export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/data_mem/data_mem.xci] -no_script -reset -force -quiet
+export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] -no_script -reset -force -quiet
+remove_files  {C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/data_mem/data_mem.xci C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci}
+add_files -norecurse C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci
+export_ip_user_files -of_objects  [get_files  C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] -lib_map_path [list {modelsim=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -force -quiet
+update_compile_order -fileset sources_1
+report_ip_status -name ip_status 
+upgrade_ip [get_ips]
+add_files -norecurse C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/data_mem/data_mem.xci
+export_ip_user_files -of_objects  [get_files  C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/data_mem/data_mem.xci] -lib_map_path [list {modelsim=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -force -quiet
+update_compile_order -fileset sources_1
+upgrade_ip [get_ips]

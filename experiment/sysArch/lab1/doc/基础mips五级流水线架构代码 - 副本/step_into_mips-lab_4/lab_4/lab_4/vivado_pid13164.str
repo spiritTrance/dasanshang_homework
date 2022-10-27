@@ -1,0 +1,207 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 13164
+License: Customer
+
+Current time: 	Wed Oct 26 23:44:17 CST 2022
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 2560x1440
+Screen resolution (DPI): 125
+Available screens: 2
+Available disk space: 43 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	15781
+User home directory: C:/Users/15781
+User working directory: C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+Vivado journal file location: 	C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4/vivado.jou
+Engine tmp dir: 	C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4/.Xil/Vivado-13164-HuangHao
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 646 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 111 MB (+114180kb) [00:00:07]
+// [Engine Memory]: 644 MB (+523545kb) [00:00:07]
+// by (cl):  Open Project : addNotify
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4' 
+// HMemoryUtils.trashcanNow. Engine heap size: 646 MB. GUI used memory: 55 MB. Current time: 10/26/22, 11:44:19 PM CST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 763 MB (+91543kb) [00:00:16]
+// [Engine Memory]: 813 MB (+12340kb) [00:00:18]
+// WARNING: HEventQueue.dispatchEvent() is taking  5427 ms.
+// Tcl Message: open_project C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/step_into_mips-lab_4/lab_4/lab_4' 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'inst_mem'. 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'data_mem'. 
+// Tcl Message: open_project: Time (s): cpu = 00:00:35 ; elapsed = 00:00:12 . Memory (MB): peak = 912.164 ; gain = 222.328 
+// [Engine Memory]: 876 MB (+23324kb) [00:00:22]
+// Tcl Message: ERROR: [Common 17-39] 'open_project' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'open_project' failed due to earlier errors.  
+// [GUI Memory]: 120 MB (+3173kb) [00:00:22]
+dismissDialog("Open Project"); // by (cl)
+// a (cl): Critical Messages: addNotify
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+selectList(PAResourceAtoD.CmdMsgDialog_MESSAGES, "[Project 1-19] Could not find the file 'C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/coe/mipstest.coe'.", 2); // b (F, a)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 1); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files]", 5); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 6, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 7, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 6, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 6, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ah (an, cl)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cl): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cl)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/coe/mipstest.coe] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/15781/Desktop/作业/experiment/sysArch/lab1/doc/基础mips五级流水线架构代码/coe/mipstest.coe 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // B (F, cl)
+selectTab((HResource) null, (HResource) null, "Tcl Console", 0); // aK (aH, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "upgrade_ip [get_ips]", true); // aC (Z, cl)
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Message: upgrade_ip [get_ips] 
+// Tcl Message: Upgrading 'data_mem' 
+// Tcl Message: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.  
+// Elapsed time: 69 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1048, 101); // dt (af, cl)
+// Elapsed time: 13 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_UPGRADE_IP, "Upgrade IP..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// ab (cl): Enable Core Container: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ab)
+// 'Y' command handler elapsed time: 4 seconds
+dismissDialog("Enable Core Container"); // ab (cl)
+// Tcl Message: upgrade_ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 [get_ips  inst_mem] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'inst_mem' 
+// Tcl Message: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.  
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.   
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem : data_mem (data_mem.xci)]", 4, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem : data_mem (data_mem.xci)]", 4, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(PAResourceCommand.PACommandNames_UPGRADE_IP, "Upgrade IP..."); // ah (an, cl)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// ab (cl): Enable Core Container: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ab)
+dismissDialog("Enable Core Container"); // ab (cl)
+// Tcl Message: upgrade_ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 [get_ips  data_mem] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'data_mem' 
+// Tcl Message: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.  
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.   
+// a (cl): Critical Messages: addNotify
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+// Elapsed time: 97 seconds
+selectButton(PAResourceQtoS.SrcFilePropPanels_MORE_INFO, "more info"); // h (cS, cl)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,076 MB. GUI used memory: 64 MB. Current time: 10/26/22, 11:48:24 PM CST
+// [GUI Memory]: 189 MB (+66045kb) [00:04:34]
+// [Engine Memory]: 1,773 MB (+894008kb) [00:04:34]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,872 MB. GUI used memory: 69 MB. Current time: 10/26/22, 11:48:49 PM CST
+// [Engine Memory]: 1,872 MB (+11721kb) [00:05:55]
+// Elapsed time: 108 seconds
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, (String) null); // aC (Z, cl)
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "upgrade_ip [get_ips]", true); // aC (Z, cl)
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Message: upgrade_ip [get_ips] 
+// Tcl Message: Upgrading 'data_mem' 
+// Tcl Message: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.  
+setText(RDIResource.CommandsInput_TYPE_TCL_COMMAND_HERE, "upgrade_ip [get_ips]", true); // aC (Z, cl)
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Command: 'upgrade_ip [get_ips]'
+// Tcl Message: upgrade_ip [get_ips] 
+// Tcl Message: Upgrading 'data_mem' 
+// Tcl Message: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design. 
+// Tcl Message: ERROR: [Common 17-69] Command failed: ERROR: [Vivado 12-3445] A collection of objects is currently not supported at this time.  Please provide only one sub-design.  
+// Elapsed time: 11 seconds
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 646, 175); // dt (af, cl)
+selectCodeEditor(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, 1037, 103); // dt (af, cl)
+typeControlKey(RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR, "RDIResource.TclConsoleView_TCL_CONSOLE_CODE_EDITOR", 'c'); // dt (af, cl)

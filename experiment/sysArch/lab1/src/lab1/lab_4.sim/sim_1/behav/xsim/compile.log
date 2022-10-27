@@ -1,0 +1,50 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/sim/data_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module data_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/sim/inst_mem.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module inst_mem
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/alu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/aludec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/eqcmp.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenrc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module floprc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/hazard.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-2458] undeclared symbol branchD, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v:42]
+INFO: [VRFC 10-2458] undeclared symbol jumpD, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v:42]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/pc.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module pc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/regfile.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/signext.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/sl2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/sim/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

@@ -1,0 +1,212 @@
+/*
+
+Xilinx Vivado v2019.1 (64-bit) [Major: 2019, Minor: 1]
+SW Build: 2552052 on Fri May 24 14:49:42 MDT 2019
+IP Build: 2548770 on Fri May 24 18:01:18 MDT 2019
+
+Process ID (PID): 3576
+License: Customer
+
+Current time: 	Thu Oct 27 00:07:36 CST 2022
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 2560x1440
+Screen resolution (DPI): 125
+Available screens: 2
+Available disk space: 43 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=15
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	15781
+User home directory: C:/Users/15781
+User working directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.1
+RDI_DATADIR: C:/Xilinx/Vivado/2019.1/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.1/bin
+
+Vivado preferences file location: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/vivado.xml
+Vivado preferences directory: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/
+Vivado layouts directory: C:/Users/15781/AppData/Roaming/Xilinx/Vivado/2019.1/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+Vivado journal file location: 	C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/vivado.jou
+Engine tmp dir: 	C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/.Xil/Vivado-3576-HuangHao
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.1/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.1
+XILINX_SDK: C:/Xilinx/SDK/2019.1
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.1
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.1
+
+
+GUI allocated memory:	154 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 700 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 111 MB (+113716kb) [00:00:05]
+// [Engine Memory]: 637 MB (+516872kb) [00:00:05]
+// by (cl):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\15781\Desktop\homework\experiment\sysArch\lab1\doc\lab1_pred\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr. Version: Vivado v2019.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4' 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 767 MB (+102072kb) [00:00:10]
+// [GUI Memory]: 116 MB (+68kb) [00:00:12]
+// [Engine Memory]: 826 MB (+22482kb) [00:00:13]
+// WARNING: HEventQueue.dispatchEvent() is taking  4863 ms.
+// Tcl Message: open_project C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr 
+// Tcl Message: INFO: [ProjectBase 1-489] The host OS only allows 260 characters in a normal path. The project is stored in a path with more than 80 characters. If you experience issues with IP, Block Designs, or files not being found, please consider moving the project to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. Current project path is 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4' INFO: [Project 1-313] Project file moved from 'C:/Users/15781/Desktop/ื๗าต/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'. 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'data_mem'. 
+// Tcl Message: ERROR: [IP_Flow 19-993] Could not find IP file for IP 'inst_mem'. 
+// HMemoryUtils.trashcanNow. Engine heap size: 846 MB. GUI used memory: 61 MB. Current time: 10/27/22, 12:07:43 AM CST
+// Tcl Message: open_project: Time (s): cpu = 00:00:27 ; elapsed = 00:00:08 . Memory (MB): peak = 882.516 ; gain = 199.902 
+// Tcl Message: ERROR: [Common 17-39] 'open_project' failed due to earlier errors. 
+// CommandFailedException: ERROR: [Common 17-69] Command failed: ERROR: [Common 17-39] 'open_project' failed due to earlier errors.  
+dismissDialog("Open Project"); // by (cl)
+// a (cl): Critical Messages: addNotify
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 26 seconds
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files]", 2); // B (F, cl)
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v)]", 1); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 6, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 6, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ae (an, cl)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ae (an, cl)
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // ae (an, cl)
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // ae (an, cl)
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ah (an, cl)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cl): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cl)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/coe/mipstest.coe] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/coe/mipstest.coe 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 7, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Coefficient Files, mipstest.coe]", 7, false, false, false, false, true, false); // B (F, cl) - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ah (an, cl)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// aE (cl): Remove Sources: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aE)
+dismissDialog("Remove Sources"); // aE (cl)
+// Tcl Message: export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe] -no_script -reset -force -quiet 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: remove_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), dmem : data_mem (data_mem.xci)]", 4, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false); // B (F, cl)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, top (top.v), imem : inst_mem (inst_mem.xci)]", 3, false, false, false, false, false, true); // B (F, cl) - Double Click
+// Run Command: PAResourceCommand.PACommandNames_RECUSTOMIZE_CORE
+// TclEventType: LOAD_FEATURE
+// r (cl): Re-customize IP: addNotify
+// [Engine Memory]: 889 MB (+22443kb) [00:01:00]
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Port A Options", 1); // bg (E, r)
+// HMemoryUtils.trashcanNow. Engine heap size: 889 MB. GUI used memory: 66 MB. Current time: 10/27/22, 12:08:33 AM CST
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Basic", 0); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Summary", 3); // bg (E, r)
+selectTab(PAResourceEtoH.HACGCTabbedPane_TABBED_PANE, (HResource) null, "Other Options", 2); // bg (E, r)
+selectCheckBox((HResource) null, "Load Init File", true); // g (o, r): TRUE
+selectButton(PAResourceEtoH.HACGCCoeFileWidget_BROWSE, "Browse"); // a (E, r)
+setFileChooser("C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe");
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+// TclEventType: DG_GRAPH_STALE
+dismissDialog("Re-customize IP"); // r (cl)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILESET_UPDATE_IP
+// Tcl Message: set_property -dict [list CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe}] [get_ips inst_mem] 
+// Tcl Message: INFO: [IP_Flow 19-3484] Absolute path of file 'c:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe' provided. It will be converted relative to IP Instance files '../../../coe/mipstest.coe' 
+// aI (cl): Generate Output Products: addNotify
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// by (cl):  Managing Output Products : addNotify
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] 
+// Tcl Message: INFO: [IP_Flow 19-1686] Generating 'Instantiation Template' target for IP 'inst_mem'... INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'inst_mem'... INFO: [IP_Flow 19-1686] Generating 'Simulation' target for IP 'inst_mem'... INFO: [IP_Flow 19-1686] Generating 'Miscellaneous' target for IP 'inst_mem'... INFO: [IP_Flow 19-1686] Generating 'Change Log' target for IP 'inst_mem'... 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all inst_mem] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// TclEventType: RUN_STATUS_CHANGE
+// Tcl Message: launch_runs -jobs 8 inst_mem_synth_1 
+// Tcl Message: [Thu Oct 27 00:08:51 2022] Launched inst_mem_synth_1... Run output will be captured here: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.runs/inst_mem_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
