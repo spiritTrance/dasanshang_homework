@@ -141,6 +141,14 @@ class DataSet(object):
             newFeature = feature
         return newFeature
         
+    def rescaling(self) -> None:
+        '''
+        Note that convert should be before feature converting
+        '''
+        for idx, val in enumerate(self.__dataClassList):
+            if val == DataClass.value:
+                self.__feature[:, idx] = (self.__feature[:, idx] - np.mean(self.__feature[:, idx]))/np.std(self.__feature[:, idx])
+                
     def __spawnNewTitle(self) -> None:
         '''
         生成转换后的新标题

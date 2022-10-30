@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "mmu.h": "c",
+        "string.h": "c"
+    }
+}

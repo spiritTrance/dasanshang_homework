@@ -1,4 +1,4 @@
-module branch_predict (
+module branchPred(
     input wire clk, rst,
     
     input wire flushD,
@@ -13,6 +13,8 @@ module branch_predict (
     output wire branchD,        // 译码阶段是否是跳转指令   
     output wire pred_takeD      // 预测是否跳转
 );
+
+// ========================== 局部分支预测部分 ============================================
     wire pred_takeF;
     reg pred_takeF_r;
     assign branchD = //判断译码阶段是否是分支指令
@@ -24,7 +26,7 @@ module branch_predict (
 
 // 
     reg [5:0] BHT [(1<<BHT_DEPTH)-1 : 0];
-    reg [1:0] PHT [(1<<PHT_DEPTH)-1:0];
+    reg [1:0] PHT [(1<<PHT_DEPTH)-1 : 0];
     
     integer i,j;
     wire [(PHT_DEPTH-1):0] PHT_index;
@@ -64,19 +66,13 @@ module branch_predict (
 
     always@(posedge clk) begin
         if(rst) begin
-            for(j = 0; j < (1<<BHT_DEPTH); j=j+1) begin
+            for(j = 0; j < (1 << BHT_DEPTH); j = j + 1) begin
                 BHT[j] <= 0;
             end
         end
         else if(branchM) begin
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
-            // 此处应该添加你的更新逻辑的代码
+            // 此处应该添加你的更新逻辑的代码_已更新
+            BHT[update_BHT_index] <= {BHT[update_BHT_index][4:0], actual_takeM};
         end
     end
 // ---------------------------------------BHT初始化以及更新---------------------------------------
@@ -91,18 +87,20 @@ module branch_predict (
         end
         else begin
             case(PHT[update_PHT_index])
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
-                // 此处应该添加你的更新逻辑的代码
+                // 此处应该添加你的更新逻辑的代码_已更新
+                Strongly_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Weakly_taken;
+                Strongly_not_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Weakly_not_taken : Strongly_not_taken;
+                Weakly_not_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Strongly_not_taken;
+                Weakly_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Strongly_not_taken;
+                default: PHT[update_PHT_index] <= 2'b00;
             endcase 
         end
     end
 // ---------------------------------------PHT初始化以及更新---------------------------------------
+
+// ======================================全局分支预测部分=========================================
+    // 定义参数
+    parameter GHT_DEPTH
 
     // 译码阶段输出最终的预测结果
     assign pred_takeD = branchD & pred_takeF_r;  

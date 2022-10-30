@@ -1,0 +1,147 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{\textcolor{blue}{#1}}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机系统结构}   %课程名
+\newcommand{\nTime}{4}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
+
+
+    \noindent Given:  A cache can hold 64 KByte data. Data are transferred between main memory and the cache in blocks of 4 bytes each. The main memory consists of 16 Mbytes, with each byte directly accessible by a 24-bit address.
+
+    
+    
+    \question[A]{How many cache blocks in the cache?} 
+    $$
+    the\ number\ of\ cache\ block\ in\ the\ cache = \frac{64KB}{4B} = 16K = 2^{14} 
+    $$
+
+
+    
+    
+    \question[B]{How many blocks in the memory?}
+
+    $$
+    the\ number\ of\ cache\ block\ in\ the\ cache = \frac{16MB}{4B} = 4M = 2^{22} 
+    $$
+
+
+    
+    
+    \question[C]{For the direct-mapping cache, how many bits for tag and cache line in a memory address, respectively?}
+    $$
+    \begin{aligned}
+        bits\ for\ tag &=24 - 14 - 2 = 8bits\\
+        bits\ for\ cache\ line &= 4\times 8+8+1= 41bits
+    \end{aligned}
+    $$
+
+
+    
+    
+    \question[D]{For the associative cache, how many bits for tag in a memory address?}
+    $$
+        bits\ for\ tag =24 - 2 = 22
+    $$
+
+
+    
+    
+    \question[E]{For the 4-way set associative cache, how many bits for tag and set\footnote{Due to the ambiguous of the question, the bits for set and the number of set was both answered.} in a memory address, respectively?}
+    $$
+    \begin{aligned}
+        bits\ for\ tag &=24 - 12 - 2 = 10\\
+        bits\ for\ set &=4\times 8\times 4 = 128bits\\
+        numbers\ for\ set &=\frac{64KB}{4\times 4B}=4K=2^{12}
+    \end{aligned}
+    $$
+
+
+    
+    
+    \question[F]{How many tag comparisons are needed in each memory access for direct-mapping, associative and four-way set associate cache, respectively?}
+    $$
+    \begin{aligned}
+        the\ number\ of\ comparisons\ in\ direct\ mapping&:1\\
+        the\ number\ of\ comparisons\ in\ associative&:2^{14}\\
+        the\ number\ of\ comparisons\ in\ four\ way\ set\ associate&:4\\
+    \end{aligned}
+    $$
+
+
+\end{document}

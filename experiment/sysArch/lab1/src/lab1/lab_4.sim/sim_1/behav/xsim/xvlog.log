@@ -46,5 +46,3 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/exp
 INFO: [VRFC 10-311] analyzing module top
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/sim/testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testbench
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

@@ -2,11 +2,11 @@
 # Webtalk v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Oct 27 10:03:21 2022
-# Process ID: 17848
-# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.sim/sim_1/behav/xsim
-# Command line: wbtcv.exe -mode batch -source C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
-# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.sim/sim_1/behav/xsim/webtalk.log
-# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.sim/sim_1/behav/xsim\webtalk.jou
+# Start of session at: Fri Oct 28 16:24:24 2022
+# Process ID: 22108
+# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim
+# Command line: wbtcv.exe -mode batch -source C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/webtalk.log
+# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
-source C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
+source C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/xsim.dir/testbench_behav/webtalk/xsim_webtalk.tcl -notrace
