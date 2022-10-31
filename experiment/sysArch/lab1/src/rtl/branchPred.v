@@ -10,14 +10,13 @@ module branchPred(
     input wire branchM,         // M阶段是否是分支指令
     input wire actual_takeM,    // 实际是否跳转
 
-    output wire branchD,        // 译码阶段是否是跳转指令   
+    input wire branchD,        // 译码阶段是否是跳转指令   
     output wire pred_takeD      // 预测是否跳转
 );
 
 // ========================== 局部分支预测部分 ============================================
     wire pred_takeF;
     reg pred_takeF_r;
-    assign branchD = //判断译码阶段是否是分支指令
 
 // 定义参数
     parameter Strongly_not_taken = 2'b00, Weakly_not_taken = 2'b01, Weakly_taken = 2'b11, Strongly_taken = 2'b10;
@@ -100,8 +99,40 @@ module branchPred(
 
 // ======================================全局分支预测部分=========================================
     // 定义参数
-    parameter GHT_DEPTH
+    parameter GHR_DEPTH = 6
+    // 定义全局预测表
+    reg [1:0] GPHT [(1 << GHR_DEPTH) - 1 : 0];
+    // 定义GHR和RE_GHR
+    reg [GHR_DEPTH - 1 : 0] GHR;
+    reg [GHR_DEPTH - 1 : 0] RE_GHR;
+    // 线网定义
+
+// -----------------------------GHR初始化以及更新--------------------------
+    always @(posedge clk) begin
+        if (rst) begin
+            GHR[i] <= 0;
+        end
+    end
+// -----------------------------RE_GHR初始化以及更新--------------------------
+    always @(posedge clk) begin
+        if (rst) begin
+            RE_GHR <= 0;
+        end
+    end
+// ----------------------------GPHT初始化以及更新---------------------------
+    always @(posedge clk) begin
+        if (rst) begin
+            for (i = 0; i < (1 << GHR_DEPTH) - 1; i = i + 1) begin
+                GPHT[i] = 0;
+            end
+        end
+        else begin
+            
+        end
+    end
+// 
+
 
     // 译码阶段输出最终的预测结果
-    assign pred_takeD = branchD & pred_takeF_r;  
+    assign pred_takeD = branchD & pred_takeF_r;
 endmodule

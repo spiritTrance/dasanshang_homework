@@ -11,8 +11,6 @@ import random
 from logging import warning
 from copy import deepcopy
 
-from soupsieve import select
-
 class DataClass(Enum):  # 枚举类，定义数据类型
     value = 1   # 数值数据
     order = 2   # 定序数据
