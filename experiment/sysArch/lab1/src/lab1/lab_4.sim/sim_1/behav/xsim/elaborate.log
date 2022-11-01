@@ -7,6 +7,9 @@ WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for
 WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:75]
 WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:79]
 WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:80]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:52]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:53]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:54]
 WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'addra' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:33]
 Completed static elaboration
 Starting simulation data flow analysis
@@ -18,22 +21,27 @@ Compiling module xil_defaultlib.floprc
 Compiling module xil_defaultlib.flopr
 Compiling module xil_defaultlib.controller
 Compiling module xil_defaultlib.hazard
+Compiling module xil_defaultlib.globalPred
+Compiling module xil_defaultlib.localPred
+Compiling module xil_defaultlib.flopenrc(WIDTH=32)
+Compiling module xil_defaultlib.floprc(WIDTH=1)
+Compiling module xil_defaultlib.floprc(WIDTH=32)
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.competePred
+Compiling module xil_defaultlib.dynamicBranchPredict
 Compiling module xil_defaultlib.mux2(WIDTH=32)
 Compiling module xil_defaultlib.regfile
 Compiling module xil_defaultlib.pc(WIDTH=32)
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.flopenr(WIDTH=32)
-Compiling module xil_defaultlib.flopenrc(WIDTH=32)
 Compiling module xil_defaultlib.signext
 Compiling module xil_defaultlib.sl2
-Compiling module xil_defaultlib.eqcmp
-Compiling module xil_defaultlib.floprc(WIDTH=32)
 Compiling module xil_defaultlib.floprc(WIDTH=5)
 Compiling module xil_defaultlib.mux3(WIDTH=32)
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.mux2(WIDTH=5)
-Compiling module xil_defaultlib.flopr(WIDTH=32)
 Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.flopr(WIDTH=1)
 Compiling module xil_defaultlib.datapath
 Compiling module xil_defaultlib.mips
 Compiling module blk_mem_gen_v8_4_3.blk_mem_gen_v8_4_3_output_stage(...

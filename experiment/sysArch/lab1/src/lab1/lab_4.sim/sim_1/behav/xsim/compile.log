@@ -8,12 +8,37 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/exp
 INFO: [VRFC 10-311] analyzing module alu
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/aludec.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module competePred
+INFO: [VRFC 10-2458] undeclared symbol fail_localPred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:21]
+INFO: [VRFC 10-2458] undeclared symbol fail_globalPred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:22]
+INFO: [VRFC 10-2458] undeclared symbol update_CPHT_index, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:23]
+INFO: [VRFC 10-2458] undeclared symbol CPHT_index, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:52]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module controller
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module datapath
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/eqcmp.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module eqcmp
+INFO: [VRFC 10-2458] undeclared symbol branchM, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:107]
+INFO: [VRFC 10-2458] undeclared symbol actual_takeM, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:108]
+INFO: [VRFC 10-2458] undeclared symbol pred_takeD, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:109]
+INFO: [VRFC 10-2458] undeclared symbol actual_takeE, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:120]
+INFO: [VRFC 10-2458] undeclared symbol fail_Pred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:121]
+INFO: [VRFC 10-2458] undeclared symbol branchE, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:156]
+INFO: [VRFC 10-2458] undeclared symbol pred_takeE, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:157]
+INFO: [VRFC 10-2458] undeclared symbol overflow, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:162]
+INFO: [VRFC 10-2458] undeclared symbol zero, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:162]
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dynamicBranchPredict
+INFO: [VRFC 10-2458] undeclared symbol pred_takeM, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:25]
+INFO: [VRFC 10-2458] undeclared symbol globalPred_D, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:27]
+INFO: [VRFC 10-2458] undeclared symbol localPred_D, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:40]
+INFO: [VRFC 10-2458] undeclared symbol localPred_E, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:46]
+INFO: [VRFC 10-2458] undeclared symbol globalPred_E, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:47]
+INFO: [VRFC 10-2458] undeclared symbol pred_takeE, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:48]
+INFO: [VRFC 10-2458] undeclared symbol localPred_M, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:52]
+INFO: [VRFC 10-2458] undeclared symbol globalPred_M, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:53]
+INFO: [VRFC 10-2458] undeclared symbol localpred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:58]
+INFO: [VRFC 10-2458] undeclared symbol globalpred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:59]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenr.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module flopenr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenrc.v" into library xil_defaultlib
@@ -22,8 +47,17 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/exp
 INFO: [VRFC 10-311] analyzing module flopr
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module floprc
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module globalPred
+INFO: [VRFC 10-2458] undeclared symbol GHR_VALUE, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:28]
+INFO: [VRFC 10-2458] undeclared symbol GPHT_INDEX, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:29]
+INFO: [VRFC 10-2458] undeclared symbol pred_takeF, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+INFO: [VRFC 10-2458] undeclared symbol fail_Pred, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:31]
+INFO: [VRFC 10-2458] undeclared symbol update_GPHT_index, assumed default net type wire [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:74]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/hazard.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module localPred
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module maindec
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v" into library xil_defaultlib
