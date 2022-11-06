@@ -1,7 +1,6 @@
 from math import log
 import copy
 
-from matplotlib.dates import DAILY
 
 class DataWrapperAndProcessor:
     def __init__(self,feature,label,feature_title) -> None:
@@ -242,7 +241,7 @@ class DecisionTree:
         return ans/tot , rightSet , wrongSet
     
     def printAcc(self, dataPraser: DataWrapperAndProcessor):
-        acc, _, _=self.getAccuracy(dataPraser)
+        acc, _, _ =self.getAccuracy(dataPraser)
         print("准确率为：{}%".format(acc * 100))
 
 # 4.3

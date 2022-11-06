@@ -388,6 +388,17 @@ class DataSpliter(object):
         return tot_trainFeatureSet, tot_trainLabelSet.reshape(trainLabelNum), tot_testFeatureSet, tot_testLabelSet.reshape(testLabelNum)
     
     @staticmethod
+    def train_valid_testSetSplit_baredata(feature: np.array, label: np.array, trainRatio = 0.8, validRatio = 0.1, is_shuffle = True):       # 划分训练集，测试集和验证集
+        '''
+            return trainFeatureSet, trainLabelSet, validFeatureSet, validLabelSet, testFeatureSet, testLabelSet
+        '''
+        if trainRatio + validRatio >= 1:
+            Exception("Wrong Ratio!")
+        trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter_bareData(feature, label, trainRatio, is_shuffle)
+        validFeatureSet, validLabelSet, testFeatureSet, testLabelSet = DataSpliter.trainAndTestSetSpliter_bareData(testFeatureSet, testLabelSet, validRatio / (1 - trainRatio), is_shuffle)
+        return trainFeatureSet, trainLabelSet, validFeatureSet, validLabelSet, testFeatureSet, testLabelSet
+    
+    @staticmethod
     def trainAndTestSetSpliter_dataIter(data_iter: Iterator, trainRatio = 0.7, is_shuffle = True, isBatchDivided = True):
         '''
         isBatchDivided如果为True,则第一维是batch_idx，否则为feature_idx
