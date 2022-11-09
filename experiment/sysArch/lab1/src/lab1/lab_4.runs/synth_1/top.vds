@@ -1,0 +1,1086 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 23:17:24 2022
+# Process ID: 5312
+# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1
+# Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
+# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/top.vds
+# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top.tcl -notrace
+Command: synth_design -top top -part xc7a100tfgg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg484-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 53936 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 821.758 ; gain = 178.570
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mips' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v:23]
+INFO: [Synth 8-6157] synthesizing module 'controller' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'maindec' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'maindec' (1#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v:23]
+INFO: [Synth 8-6157] synthesizing module 'aludec' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/aludec.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'aludec' (2#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/aludec.v:23]
+INFO: [Synth 8-6157] synthesizing module 'floprc' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc' (3#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr' (4#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+WARNING: [Synth 8-689] width (3) of port connection 'q' does not match port width (8) of module 'flopr' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:75]
+WARNING: [Synth 8-689] width (2) of port connection 'q' does not match port width (8) of module 'flopr' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:80]
+WARNING: [Synth 8-3848] Net equalD in module/entity controller does not have driver. [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'controller' (5#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'datapath' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:23]
+INFO: [Synth 8-6157] synthesizing module 'hazard' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/hazard.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'hazard' (6#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/hazard.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dynamicBranchPredict' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:1]
+INFO: [Synth 8-6157] synthesizing module 'globalPred' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:1]
+	Parameter Strongly_not_taken bound to: 2'b00 
+	Parameter Weakly_not_taken bound to: 2'b01 
+	Parameter Weakly_taken bound to: 2'b11 
+	Parameter Strongly_taken bound to: 2'b10 
+	Parameter GHR_WIDTH bound to: 6 - type: integer 
+	Parameter GPHT_DEPTH bound to: 9 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:82]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[62] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[61] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[60] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[59] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[58] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[57] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[56] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[55] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[54] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[53] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[52] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[51] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[50] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[49] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[48] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[47] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[46] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[45] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[44] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[43] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[42] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[41] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[40] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[39] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[38] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[37] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[36] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[35] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[34] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[33] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[32] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[31] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[30] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[29] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[28] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[27] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[26] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[25] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[24] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[23] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[22] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[21] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[20] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[19] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[18] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[17] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[16] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[15] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[14] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[13] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[12] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[11] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[10] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[9] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[8] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[7] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[6] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[5] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[4] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[3] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+WARNING: [Synth 8-6014] Unused sequential element GPHT_reg[2] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:30]
+INFO: [Synth 8-6155] done synthesizing module 'globalPred' (7#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v:1]
+INFO: [Synth 8-6157] synthesizing module 'localPred' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:1]
+	Parameter Strongly_not_taken bound to: 2'b00 
+	Parameter Weakly_not_taken bound to: 2'b01 
+	Parameter Weakly_taken bound to: 2'b11 
+	Parameter Strongly_taken bound to: 2'b10 
+	Parameter PHT_DEPTH bound to: 9 - type: integer 
+	Parameter BHT_DEPTH bound to: 10 - type: integer 
+INFO: [Synth 8-226] default block is never used [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:84]
+INFO: [Synth 8-6155] done synthesizing module 'localPred' (8#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:1]
+INFO: [Synth 8-6157] synthesizing module 'flopenrc' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenrc.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenrc' (9#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenrc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'floprc__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc__parameterized0' (9#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'floprc__parameterized1' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc__parameterized1' (9#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized0' (9#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+WARNING: [Synth 8-689] width (1) of port connection 'q' does not match port width (32) of module 'flopr__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:52]
+WARNING: [Synth 8-689] width (1) of port connection 'q' does not match port width (32) of module 'flopr__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:53]
+WARNING: [Synth 8-689] width (1) of port connection 'q' does not match port width (32) of module 'flopr__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:54]
+INFO: [Synth 8-6157] synthesizing module 'competePred' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:1]
+	Parameter Strongly_local bound to: 2'b00 
+	Parameter Weakly_local bound to: 2'b01 
+	Parameter Weakly_global bound to: 2'b11 
+	Parameter Strongly_global bound to: 2'b10 
+	Parameter CPHT_DEPTH bound to: 5 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[31] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[30] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[29] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[28] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[27] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[26] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[25] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[24] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[23] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[22] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[21] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[20] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[19] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[18] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[17] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[16] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[15] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[14] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[13] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[12] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[11] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[10] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[9] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[8] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[7] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[6] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[5] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[4] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[3] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+WARNING: [Synth 8-6014] Unused sequential element CPHT_reg[2] was removed.  [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'competePred' (10#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:1]
+WARNING: [Synth 8-3848] Net localpred in module/entity dynamicBranchPredict does not have driver. [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:58]
+WARNING: [Synth 8-3848] Net globalpred in module/entity dynamicBranchPredict does not have driver. [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'dynamicBranchPredict' (11#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux2' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2' (12#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/regfile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (13#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/regfile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pc' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/pc.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'pc' (14#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/pc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'adder' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'adder' (15#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopenr' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenr.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopenr' (16#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopenr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'signext' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/signext.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'signext' (17#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/signext.v:23]
+INFO: [Synth 8-6157] synthesizing module 'sl2' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/sl2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'sl2' (18#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/sl2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'floprc__parameterized2' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'floprc__parameterized2' (18#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/floprc.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux3' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux3.v:23]
+	Parameter WIDTH bound to: 32 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux3' (19#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/alu.v:23]
+INFO: [Synth 8-226] default block is never used [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/alu.v:35]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (20#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/alu.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux2__parameterized0' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'mux2__parameterized0' (20#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized1' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+	Parameter WIDTH bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized1' (20#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+INFO: [Synth 8-6157] synthesizing module 'flopr__parameterized2' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'flopr__parameterized2' (20#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/flopr.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'datapath' (21#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/datapath.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mips' (22#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v:23]
+INFO: [Synth 8-6157] synthesizing module 'inst_mem' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/.Xil/Vivado-5312-HuangHao/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'inst_mem' (23#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/.Xil/Vivado-5312-HuangHao/realtime/inst_mem_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/.Xil/Vivado-5312-HuangHao/realtime/data_mem_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (24#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/.Xil/Vivado-5312-HuangHao/realtime/data_mem_stub.v:6]
+WARNING: [Synth 8-689] width (32) of port connection 'addra' does not match port width (16) of module 'data_mem' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'top' (25#1) [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:23]
+WARNING: [Synth 8-3331] design sl2 has unconnected port a[31]
+WARNING: [Synth 8-3331] design sl2 has unconnected port a[30]
+WARNING: [Synth 8-3331] design competePred has unconnected port localpred
+WARNING: [Synth 8-3331] design competePred has unconnected port globalpred
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[31]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[30]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[29]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[28]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[27]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[26]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[25]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[24]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[23]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[22]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[21]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[20]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[19]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[18]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[17]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[16]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[15]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[14]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[13]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[12]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[11]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[10]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[9]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[8]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[7]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[6]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[5]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[4]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[3]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[1]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcD[0]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[31]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[30]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[29]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[28]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[27]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[26]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[25]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[24]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[23]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[22]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[21]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[20]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[19]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[18]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[17]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[16]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[15]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[14]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[13]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[12]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[11]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[10]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[9]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[8]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[7]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[6]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[5]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[4]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[3]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[1]
+WARNING: [Synth 8-3331] design competePred has unconnected port pcM[0]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[31]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[30]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[29]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[28]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[27]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[26]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[25]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[24]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[23]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[22]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[21]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[20]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[19]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[18]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[17]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[16]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[15]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[14]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[13]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[12]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[1]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcF[0]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[31]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[30]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[29]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[28]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[27]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[26]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[25]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[24]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[23]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[22]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[21]
+WARNING: [Synth 8-3331] design localPred has unconnected port pcM[20]
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:01:07 ; elapsed = 00:01:08 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:01:08 ; elapsed = 00:01:10 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'dmem'
+Finished Parsing XDC File [c:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/data_mem/data_mem_in_context.xdc] for cell 'dmem'
+Parsing XDC File [c:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'imem'
+Finished Parsing XDC File [c:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/inst_mem/inst_mem_in_context.xdc] for cell 'imem'
+Parsing XDC File [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1302.137 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.060 . Memory (MB): peak = 1302.137 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property DONT_TOUCH = true for dmem. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for imem. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:01:14 ; elapsed = 00:01:15 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5546] ROM "controls" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5587] ROM size for "alucontrol" is below threshold of ROM address width. It will be mapped to LUTs
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:01:26 ; elapsed = 00:01:29 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |localPred__GB0            |           1|     29813|
+|2     |localPred__GB1            |           1|      9136|
+|3     |localPred__GB2            |           1|     11544|
+|4     |dynamicBranchPredict__GC0 |           1|       397|
+|5     |datapath__GC0             |           1|      2171|
+|6     |controller                |           1|        99|
+|7     |top__GC0                  |           1|        65|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   3 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 4     
++---Registers : 
+	               32 Bit    Registers := 17    
+	                8 Bit    Registers := 3     
+	                6 Bit    Registers := 1026  
+	                5 Bit    Registers := 5     
+	                2 Bit    Registers := 516   
+	                1 Bit    Registers := 9     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 17    
+	   4 Input     32 Bit        Muxes := 3     
+	   7 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      5 Bit        Muxes := 4     
+	   7 Input      3 Bit        Muxes := 1     
+	   8 Input      3 Bit        Muxes := 1     
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 24    
+	   4 Input      2 Bit        Muxes := 6     
+	   3 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 544   
+	   3 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module maindec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   7 Input      9 Bit        Muxes := 1     
+	   7 Input      3 Bit        Muxes := 1     
+Module aludec 
+Detailed RTL Component Info : 
++---Muxes : 
+	   8 Input      3 Bit        Muxes := 1     
+Module floprc 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+Module flopr__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module flopr 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module localPred 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1024  
+	                2 Bit    Registers := 512   
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   5 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 523   
+Module globalPred 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	                6 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      6 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 9     
+	   4 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 8     
+Module flopenrc__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module floprc__parameterized0__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module floprc__parameterized0__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module floprc__parameterized0__3 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module floprc__parameterized1__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module flopr__parameterized0__1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized0__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized0__3 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized0__4 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module competePred 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 2     
++---Registers : 
+	                2 Bit    Registers := 2     
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 10    
+	   3 Input      2 Bit        Muxes := 2     
+	   4 Input      2 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 11    
+	   3 Input      1 Bit        Muxes := 2     
+Module hazard 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      2 Bit        Muxes := 4     
+Module mux2__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux2__2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux2__3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux2__4 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module regfile 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+Module pc 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module adder__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module flopenr 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopenrc 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module adder 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+Module mux2__5 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module mux2__6 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized1__2 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized1__3 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized1__4 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module floprc__parameterized2__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module floprc__parameterized2__2 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module floprc__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module floprc__parameterized0__4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module floprc__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module mux3__1 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module mux3 
+Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input     32 Bit        Muxes := 1     
+Module mux2__7 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module alu 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     32 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 2     
+	   4 Input     32 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 1     
+Module mux2__parameterized0 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input      5 Bit        Muxes := 1     
+Module flopr__parameterized0__5 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized0__6 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized1__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module flopr__parameterized2__1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module flopr__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module flopr__parameterized0__7 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 1     
+Module flopr__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                5 Bit    Registers := 1     
+Module mux2 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+Module datapath 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-5546] ROM "md/controls" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-4471] merging register 'PHT_reg[494][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[495][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[496][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[497][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[498][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[499][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[500][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[501][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[511][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[64][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[65][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[66][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[67][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[68][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[69][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[70][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[71][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[72][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[73][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[74][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[75][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[76][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[77][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[78][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[79][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[80][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[81][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[82][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[83][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[84][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[85][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[86][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[87][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[88][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[89][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[90][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[91][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[92][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[93][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[94][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[95][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[96][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[97][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[98][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[99][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[100][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[101][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[102][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[103][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[104][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[105][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[106][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[107][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[108][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[109][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[110][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[111][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[112][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[113][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[114][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[115][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[116][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[117][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[118][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[119][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[120][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[121][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[122][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[123][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[124][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[125][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[126][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[127][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[128][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[129][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[130][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[131][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[132][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[133][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[134][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[135][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[136][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[137][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[138][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[139][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[140][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[141][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[142][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[143][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[144][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[145][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[146][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[147][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[148][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[149][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[150][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[151][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[152][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[153][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Synth 8-4471] merging register 'PHT_reg[154][1:0]' into 'PHT_reg[493][1:0]' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v:41]
+INFO: [Common 17-14] Message 'Synth 8-4471' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Ci_1/\PHT_reg[493][0] )
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (Ci_1/\PHT_reg[493][1] )
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd10__3' (FDRE) to 'dpi_5/r2D/q_reg[21]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd10__2' (FDRE) to 'dpi_5/r2D/q_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd10__1' (FDRE) to 'dpi_5/r2D/q_reg[23]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd10__0' (FDRE) to 'dpi_5/r2D/q_reg[24]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd10' (FDRE) to 'dpi_5/r2D/q_reg[25]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd20__3' (FDRE) to 'dpi_5/r2D/q_reg[16]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd20__2' (FDRE) to 'dpi_5/r2D/q_reg[17]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd20__1' (FDRE) to 'dpi_5/r2D/q_reg[18]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd20__0' (FDRE) to 'dpi_5/r2D/q_reg[19]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/rf/rd20' (FDRE) to 'dpi_5/r2D/q_reg[20]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[16]' (FDC) to 'dpi_5/r3E/q_reg[17]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[17]' (FDC) to 'dpi_5/r3E/q_reg[18]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[18]' (FDC) to 'dpi_5/r3E/q_reg[19]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[19]' (FDC) to 'dpi_5/r3E/q_reg[20]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[20]' (FDC) to 'dpi_5/r3E/q_reg[21]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[21]' (FDC) to 'dpi_5/r3E/q_reg[22]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[22]' (FDC) to 'dpi_5/r3E/q_reg[23]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[23]' (FDC) to 'dpi_5/r3E/q_reg[24]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[24]' (FDC) to 'dpi_5/r3E/q_reg[25]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[25]' (FDC) to 'dpi_5/r3E/q_reg[26]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[26]' (FDC) to 'dpi_5/r3E/q_reg[27]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[27]' (FDC) to 'dpi_5/r3E/q_reg[28]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[28]' (FDC) to 'dpi_5/r3E/q_reg[29]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[29]' (FDC) to 'dpi_5/r3E/q_reg[30]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[30]' (FDC) to 'dpi_5/r3E/q_reg[31]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r3E/q_reg[31]' (FDC) to 'dpi_5/r3E/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r6E/q_reg[3]' (FDC) to 'dpi_5/r3E/q_reg[14]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r6E/q_reg[4]' (FDC) to 'dpi_5/r3E/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r6E/q_reg[0]' (FDC) to 'dpi_5/r3E/q_reg[11]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r6E/q_reg[1]' (FDC) to 'dpi_5/r3E/q_reg[12]'
+INFO: [Synth 8-3886] merging instance 'dpi_5/r6E/q_reg[2]' (FDC) to 'dpi_5/r3E/q_reg[13]'
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:03:13 ; elapsed = 00:03:22 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping  Report (see note below)
++------------+------------+-----------+----------------------+---------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++------------+------------+-----------+----------------------+---------------+
+|top         | rf/rf_reg  | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |localPred__GB0            |           1|     20177|
+|2     |localPred__GB1            |           1|       561|
+|3     |localPred__GB2            |           1|       680|
+|4     |dynamicBranchPredict__GC0 |           1|        90|
+|5     |datapath__GC0             |           1|      1588|
+|6     |controller                |           1|        59|
+|7     |top__GC0                  |           1|        65|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:03:19 ; elapsed = 00:03:28 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:03:19 ; elapsed = 00:03:28 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping  Report
++------------+------------+-----------+----------------------+---------------+
+|Module Name | RTL Object | Inference | Size (Depth x Width) | Primitives    | 
++------------+------------+-----------+----------------------+---------------+
+|top         | rf/rf_reg  | Implied   | 32 x 32              | RAM32M x 12   | 
++------------+------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+--------------------------+------------+----------+
+|      |RTL Partition             |Replication |Instances |
++------+--------------------------+------------+----------+
+|1     |localPred__GB0            |           1|     20177|
+|2     |localPred__GB1            |           1|       561|
+|3     |localPred__GB2            |           1|       680|
+|4     |dynamicBranchPredict__GC0 |           1|        90|
+|5     |datapath__GC0             |           1|      1588|
+|6     |controller                |           1|        59|
+|7     |top__GC0                  |           1|        65|
++------+--------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pred_takeD with 1st driver pin 'i_46/Z' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:21]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin pred_takeD with 2nd driver pin 'GND' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:21]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net pred_takeD is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/competePred.v:21]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:03:20 ; elapsed = 00:03:30 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mips/dp/stallD with 1st driver pin 'i_392/O' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v:28]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin mips/dp/stallD with 2nd driver pin 'i_326/O' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v:28]
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |inst_mem      |         1|
+|2     |data_mem      |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |data_mem |     1|
+|2     |inst_mem |     1|
+|3     |BUFG     |     1|
+|4     |CARRY4   |    10|
+|5     |LUT1     |     3|
+|6     |LUT2     |    55|
+|7     |LUT3     |   121|
+|8     |LUT4     |    45|
+|9     |LUT5     |   109|
+|10    |LUT6     |    60|
+|11    |RAM32M   |    12|
+|12    |FDCE     |   250|
+|13    |FDRE     |    32|
+|14    |IBUF     |     2|
+|15    |OBUF     |    65|
++------+---------+------+
+
+Report Instance Areas: 
++------+-------------------+-------------------------+------+
+|      |Instance           |Module                   |Cells |
++------+-------------------+-------------------------+------+
+|1     |top                |                         |   829|
+|2     |  mips             |mips                     |   696|
+|3     |    c              |controller               |    95|
+|4     |      regE         |floprc                   |    90|
+|5     |      regM         |flopr                    |     3|
+|6     |      regW         |flopr_7                  |     2|
+|7     |    dp             |datapath                 |   601|
+|8     |      alu          |alu                      |     8|
+|9     |      branchE_flop |floprc__parameterized0   |     1|
+|10    |      pcadd1       |adder                    |     2|
+|11    |      pcreg        |pc                       |    11|
+|12    |      r1E          |floprc__parameterized1   |    32|
+|13    |      r1M          |flopr__parameterized0    |    32|
+|14    |      r1W          |flopr__parameterized0_0  |    32|
+|15    |      r2D          |flopenrc                 |    89|
+|16    |      r2E          |floprc__parameterized1_1 |    32|
+|17    |      r2M          |flopr__parameterized0_2  |    32|
+|18    |      r2W          |flopr__parameterized0_3  |    64|
+|19    |      r3E          |floprc__parameterized1_4 |    29|
+|20    |      r3M          |flopr__parameterized1    |    10|
+|21    |      r3W          |flopr__parameterized1_5  |     9|
+|22    |      r4E          |floprc__parameterized2   |    79|
+|23    |      r5E          |floprc__parameterized2_6 |    63|
+|24    |      rf           |regfile                  |    76|
++------+-------------------+-------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 5 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:10 ; elapsed = 00:03:28 . Memory (MB): peak = 1302.137 ; gain = 658.949
+Synthesis Optimization Complete : Time (s): cpu = 00:03:21 ; elapsed = 00:03:31 . Memory (MB): peak = 1302.137 ; gain = 658.949
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 1 inverter(s) to 12 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1302.137 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 12 instances were transformed.
+  RAM32M => RAM32M (inverted pins: WCLK) (RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMD32, RAMS32, RAMS32): 12 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+216 Infos, 200 Warnings, 5 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:03:25 ; elapsed = 00:03:36 . Memory (MB): peak = 1302.137 ; gain = 914.855
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1302.137 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  8 23:21:04 2022...

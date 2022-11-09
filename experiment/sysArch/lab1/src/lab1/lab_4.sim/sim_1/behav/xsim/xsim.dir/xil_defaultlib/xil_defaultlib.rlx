@@ -19,7 +19,7 @@ C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/globalPred.v,166
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/hazard.v,1581614928,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v,,hazard,,,,,,,,
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/sim/data_mem.v,1666835813,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/sim/inst_mem.v,,data_mem,,,,,,,,
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/sim/inst_mem.v,1667305867,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/adder.v,,inst_mem,,,,,,,,
-C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v,1667222982,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v,,localPred,,,,,,,,
+C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/localPred.v,1667310499,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v,,localPred,,,,,,,,
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/maindec.v,1581614928,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v,,maindec,,,,,,,,
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mips.v,1581614928,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v,,mips,,,,,,,,
 C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux2.v,1581614928,verilog,,C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/mux3.v,,mux2,,,,,,,,
