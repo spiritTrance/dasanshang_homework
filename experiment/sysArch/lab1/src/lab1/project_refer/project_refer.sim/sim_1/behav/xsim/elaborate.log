@@ -1,0 +1,50 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto ed4818089e654808a0d2de8a6648ec7e --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/15781/Desktop/mips_cpu/rtl/adder.sv" Line 13. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/15781/Desktop/mips_cpu/rtl/adder.sv" Line 13. Module adder doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/15781/Desktop/mips_cpu/rtl/alu.sv" Line 1. Module alu doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.$unit_adder_sv
+Compiling module xil_defaultlib.flopenr(p_nbits=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.mux2(p_nbits=32)
+Compiling module xil_defaultlib.flopenrc(p_nbits=32)
+Compiling module xil_defaultlib.flopenrc(p_nbits=1)
+Compiling module xil_defaultlib.flopenrc(p_nbits=3)
+Compiling module xil_defaultlib.flopenrc(p_nbits=10)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.sign_extend
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.floprc(p_nbits=1)
+Compiling module xil_defaultlib.floprc(p_nbits=3)
+Compiling module xil_defaultlib.floprc(p_nbits=32)
+Compiling module xil_defaultlib.floprc(p_nbits=5)
+Compiling module xil_defaultlib.floprc(p_nbits=10)
+Compiling module xil_defaultlib.mux3(p_nbits=32)
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2(p_nbits=5)
+Compiling module xil_defaultlib.flopr(p_nbits=32)
+Compiling module xil_defaultlib.flopr(p_nbits=1)
+Compiling module xil_defaultlib.flopr(p_nbits=5)
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.main_decoder
+Compiling module xil_defaultlib.alu_decoder
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.hazard
+Compiling module xil_defaultlib.branch_predict_global_default
+Compiling module xil_defaultlib.branch_predict_local_default
+Compiling module xil_defaultlib.tournament_predictor
+Compiling module xil_defaultlib.mux2(p_nbits=1)
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.top
+Compiling module xil_defaultlib.testbench
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot testbench_behav

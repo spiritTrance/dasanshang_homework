@@ -55,8 +55,8 @@ module dynamicBranchPredict (
 	flopr #(32) pcE_M(clk,rst,pcE,pcM);
     
     competePred A(
-        localpred,
-        globalpred,
+        localPred_D,
+        globalPred_D,
         rst, 
         clk,
         branchM,

@@ -1,0 +1,49 @@
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/adder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module full_adder
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/alu.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/alu_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module alu_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/branch_predict_global.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_predict_global
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/branch_predict_local.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module branch_predict_local
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/datapath.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/dmem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/flopenr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/flopenrc.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopenrc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/flopr.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/floprc.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module floprc
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/hazard.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module hazard
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/imem.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/main_decoder.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module main_decoder
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/mips.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/mux2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/mux3.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module mux3
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/regfile.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/sign_extend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sign_extend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/sl2.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/top.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/rtl/tournament_predictor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tournament_predictor
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/15781/Desktop/mips_cpu/sim/testbench.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench

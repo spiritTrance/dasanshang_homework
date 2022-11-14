@@ -115,7 +115,7 @@ module datapath(
 		{pcplus4D[31:28],instrD[25:0],2'b00},
 		jumpD,pcnextFD);
 	
-	wire [31:0] pcbranchEplus4, dynamicPc, finalNextFD;					// pc for predict site
+	wire [31:0] pcbranchEplus4, dynamicPc, finalNextFD;		// pc for predict site
 	assign pcbranchEplus4 = 32'h4 + pcbranchE;				// pc for predict site
 	mux2 #(32) pcDynPredMux(pcbranchEplus4,pcbranchE,actual_takeE,dynamicPc);
 	mux2 #(32) pcBinaryChoiceMux(pcnextFD,dynamicPc,fail_Pred,finalNextFD);

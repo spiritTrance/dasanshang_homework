@@ -29,14 +29,14 @@ module competePred (
         end
         else if (branchM) begin
             case({fail_localPred, fail_globalPred})
-                2'b10:                  // 局部预测准确
+                2'b01:                  // 局部预测准确
                     case(CPHT[update_CPHT_index])
                         Strongly_global: CPHT[update_CPHT_index] <= Weakly_global;
                         Weakly_global: CPHT[update_CPHT_index] <= Weakly_local;
                         Weakly_local: CPHT[update_CPHT_index] <= Strongly_local;
                         Strongly_local: CPHT[update_CPHT_index] <= Strongly_local;
                     endcase
-                2'b01:                  // 全局预测准确
+                2'b10:                  // 全局预测准确
                     case(CPHT[update_CPHT_index])
                         Strongly_global: CPHT[update_CPHT_index] <= Strongly_global;
                         Weakly_global: CPHT[update_CPHT_index] <= Strongly_global;
@@ -50,5 +50,6 @@ module competePred (
     
     // 预测结果
     assign CPHT_index = pcD[CPHT_DEPTH + 2: 2];
-    assign pred = CPHT[CPHT_index][1];
+    assign isGlobal = CPHT[CPHT_index][1];
+    assign pred = isGlobal == 1'b1 ? globalpred : localpred;
 endmodule

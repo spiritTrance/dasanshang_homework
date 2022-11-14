@@ -31,6 +31,8 @@ module globalPred (
     assign fail_Pred = pred_takeM ^ actual_takeM;   // 为1则预测失败
     // 定义预测寄存器
     reg pred_takeF_r;
+    // 定义修正寄存器
+    reg isRevised;
 // -----------------------pipeline result--------------------------------
     always @(posedge ~clk) begin
         if (rst | flushD) begin
@@ -44,20 +46,29 @@ module globalPred (
         end
     end
 // -----------------------------GHR初始化以及更新--------------------------
+    reg fail_PredForM;                  // 需要这个结构的原因是防止MEM发现出错，此时GHR全部有用
+    always @(posedge ~clk) begin
+        if (rst) begin
+            fail_PredForM <= 0;
+        end else begin
+            fail_PredForM <= fail_Pred;
+        end
+    end
     always @(posedge ~clk) begin
         if (rst) begin
             GHR <= 0;
         end
-        else if (branchM & fail_Pred) begin   // 异或结果不为0，说明预测错误，需要RE_GHR更新，进入ID,EX的指令需要全部清刷掉（flush信号），PC连上正确的地址！
-            GHR <= {RE_GHR[GHR_WIDTH-1:1], actual_takeM};
+        else if (branchM & fail_Pred) begin   // 说明预测错误，需要RE_GHR更新，进入ID,EX的指令需要全部清刷掉（flush信号），PC连上正确的地址
+            GHR <= {RE_GHR[GHR_WIDTH-2 : 0], actual_takeM};
         end
-        else if (branchD) begin     // 前面ID阶段的指令是分支指令，保存预测记录
+        else if (branchD | flushD | fail_PredForM) begin     // 前面ID阶段的指令是分支指令，或者ID阶段的指令被flush
             GHR <= {GHR[GHR_WIDTH-2 : 0], pred_takeF};
         end
         else begin  // 前面ID阶段的指令不是分支指令，直接覆盖上个周期的预测结果
             GHR <= {GHR[GHR_WIDTH-1 : 1], pred_takeF};
         end
     end
+//
 // -----------------------------RE_GHR初始化以及更新--------------------------
     always @(posedge ~clk) begin
         if (rst) begin
@@ -75,7 +86,7 @@ module globalPred (
     always @(posedge ~clk) begin
         if (rst) begin
             for (i = 0; i < (1 << GHR_WIDTH) - 1; i = i + 1) begin
-                GPHT[i] = 0;
+                GPHT[i] = Weakly_not_taken;
             end
         end
         else if (branchM) begin     // 提交阶段进行更新

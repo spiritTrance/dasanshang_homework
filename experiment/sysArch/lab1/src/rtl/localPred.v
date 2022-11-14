@@ -77,20 +77,19 @@ module localPred(
     always @(posedge ~clk) begin            
         if(rst) begin
             for(i = 0; i < (1<<PHT_DEPTH); i=i+1) begin
-                PHT[i] <= Weakly_taken;
+                PHT[i] <= Weakly_not_taken;
             end
         end
-        else begin
+        else if (branchM) begin
             case(PHT[update_PHT_index])
                 Strongly_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Weakly_taken;
                 Strongly_not_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Weakly_not_taken : Strongly_not_taken;
                 Weakly_not_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Strongly_not_taken;
                 Weakly_taken: PHT[update_PHT_index] <= actual_takeM == 1'b1 ? Strongly_taken : Strongly_not_taken;
-                default: PHT[update_PHT_index] <= 2'b00;
+                default: PHT[update_PHT_index] <= Weakly_taken;
             endcase 
         end
     end
-
 
     // 最终预测结果
     assign pred_takeD = branchD & pred_takeF_r;

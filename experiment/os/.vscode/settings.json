@@ -2,6 +2,20 @@
     "files.associations": {
         "*.cpp": "cpp",
         "mmu.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "list.h": "c",
+        "stdlib.h": "c",
+        "kmalloc.h": "c",
+        "stat.h": "c",
+        "vfs.h": "c",
+        "dev.h": "c",
+        "sfs.h": "c",
+        "inode.h": "c",
+        "iobuf.h": "c",
+        "bitmap.h": "c",
+        "error.h": "c",
+        "assert.h": "c",
+        "defs.h": "c",
+        "features.h": "c"
     }
 }
