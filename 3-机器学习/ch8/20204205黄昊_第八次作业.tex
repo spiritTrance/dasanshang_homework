@@ -1,0 +1,137 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{机器学习}   %课程名
+\newcommand{\nTime}{八}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
+\textbf{选择题目：}
+    \answer[8.1]
+    \answer[8.4]
+    \answer[8.6]
+    \answer[8.7]
+    \answer[8.8]
+
+    
+\answer[8.1]
+证明：
+$$
+\begin{aligned}
+    P(H(x)\neq f(x))
+&= P(X\leq \lfloor T/2 \rfloor)\\
+&\leq P(X\leq  T/2)\\
+&= P(X-(1-\epsilon)T\leq \frac{T}{2}-(1-\epsilon)T)\\
+&= P(X-(1-\epsilon)T\leq -\frac{T}{2}(1-2\epsilon))\\
+&= P(\sum_{i=1}^Tx_i-\sum_{i=1}^T\mathbb{E}(x_i)\leq-\frac{T}{2}(1-2\epsilon))\\
+&= P(\frac{1}{T}\sum_{i=1}^Tx_i-\frac{1}{T}\sum_{i=1}^T\mathbb{E}(x_i)\leq-\frac{1}{2}(1-2\epsilon))\\
+\end{aligned}
+$$
+
+由Hoeffding不等式可知：
+$$
+P(\frac{1}{m}\sum_{i=1}^mx_i-\frac{1}{m}\sum_{i=1}^m \mathbb{E}(x_i)\leq -\delta)\leq e^{-2m\delta^2}
+$$
+令$\delta = \frac{1-2\epsilon}{2},m=T$得：
+$$
+\begin{aligned}
+    P(H(x)\neq f(x)) &= \sum_{k=0}^{\lfloor T/2 \rfloor}\binom{T}{k}(1-\epsilon)^k\epsilon^{T-k}\\
+    &\leq e^{-\frac{1}{2}T(1-2\epsilon)^2}
+\end{aligned}
+$$
+从而得证。
+
+\answer[8.4]
+两种算法都属于集成学习算法。但Adaboost是通过增加上一轮训练错误样本的权重达到关注预测错误样本的目的，
+而GradientBoosting 是用负梯度来作为上一轮中基学习器犯错的衡量指标，从而在下一轮中通过拟合上一轮中的负梯度来达到纠正上一轮中所犯错误的目的。
+两者的优化对象有所区别。
+
+\answer[8.6]
+根据偏差-方差分解，Bagging关注于降低方差，而朴素贝叶斯是在所有样本中求最大后验概率，
+某种程度上已经是考虑样本后的最优解，此时再降低方差是没有意义的。
+
+\answer[8.7]
+因为随机森林除了在样本的选择是随机选择之外，在属性上的选择也是随机选取一部分，增加了
+基学习器的多样性。
+
+\answer[8.8]
+Multiboosting 可以有效降低误差和方差，但训练成本会显著上升。
+Iterative Bagging会通过bagging降低误差，但是方差会上升。
+
+
+
+\end{document}

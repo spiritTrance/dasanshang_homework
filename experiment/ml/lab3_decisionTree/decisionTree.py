@@ -243,7 +243,7 @@ class DecisionTree:
         acc_valid = 0
         for son in node.son:
             acc_valid += son.validInfo[0]
-        print(node.height,acc_valid, node.validInfo[0])
+        # print(node.height,acc_valid, node.validInfo[0])
         if acc_valid < node.validInfo[0]:
             node.son = []
             

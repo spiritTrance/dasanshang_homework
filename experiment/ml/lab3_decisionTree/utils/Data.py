@@ -350,7 +350,6 @@ class DataSpliter(object):
         
     def trainAndTestSetSpliter_bareData(feature: np.array, label: np.array, trainRatio = 0.7, is_shuffle = True):
         '''
-        注意label是二维的，不是一维的
         是分层抽样
         return trainFeatureSet, trainLabelSet, testFeatureSet, testLabelSet
         '''
