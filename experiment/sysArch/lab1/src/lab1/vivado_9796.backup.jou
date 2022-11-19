@@ -1,0 +1,18 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 22:48:13 2022
+# Process ID: 9796
+# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent8732 C:\Users\15781\Desktop\homework\experiment\sysArch\lab1\src\lab1\lab_4.xpr
+# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/vivado.log
+# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/testbench_behav.wcfg
+source testbench.tcl
+close_sim

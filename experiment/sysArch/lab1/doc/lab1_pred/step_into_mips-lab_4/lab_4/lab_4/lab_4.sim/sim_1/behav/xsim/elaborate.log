@@ -1,0 +1,12 @@
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 3bb9b409a0d644e9b607ef9d05d023cc --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_3 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/controller.v:74]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/controller.v:75]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/controller.v:79]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/controller.v:80]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'addra' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/top.v:33]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel

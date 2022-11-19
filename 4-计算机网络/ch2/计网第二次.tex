@@ -1,0 +1,104 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机网络}   %课程名
+\newcommand{\nTime}{2}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+\homeworkTitle
+\answer[2-01]
+物理层主要解决的问题是：如何在传输媒体上传输比特流，即01数据串。
+其特点在于能够屏蔽掉不同传输媒体的差异。只关注比特流的具体传输方式，
+而不关注在具体的物理介质中是如何传输的。
+
+\answer[2-05]
+其特点有机械特性，电气特性，功能特性和过程特性。
+
+
+机械特性：接口所用接线器的形状、尺寸、引线数目等。
+
+电气特性：指明接口电缆的各条线上出现的电压范围。
+
+功能特性：指明某条线上出现的各种电平的电压的含义。
+
+过程特性：规定了不同功能各种可能事件的出现次序。
+
+\answer[2-09]
+香农公式：
+$$
+\mbox{传输速率}=W\log_2(1+\frac{S}{N})
+$$
+
+分别带入数据，得到信噪比扩大的倍数为$\frac{2^\frac{560}{31}-1}{2^\frac{350}{31}-1}=109.4983$。
+
+再增大到十倍，计算得出结果为$\frac{3100\log_2(10\times 2^\frac{560}{31}-9)}{56000}-1=18.4\%$，达不到20\%的水平。
+
+\answer[2-13]
+$$
+\mbox{频带宽度}=\frac{v_{\mbox{光速}}}{l}-\frac{v_{\mbox{光速}}}{r}
+$$
+
+其中l为光波波长下限，r为光波波长上限。
+计算可得1200nm到1400nm的工作频率为$2.3810\times 10^{13}$Hz，
+1400nm到1600nm的工作频率为$1.7857\times10^{13}$Hz
+
+\answer[2-16]
+将收到的码片序列与各站点码片序列做内积运算，对分量求和后除以码片序列长度，即为各个站点所发数据。结果分别为1，-1，0，1，由此可以断定a发送了1，b发送了-1，c没有发送，d发送了1。
+
+
+\end{document}

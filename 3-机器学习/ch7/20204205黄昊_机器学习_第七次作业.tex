@@ -1,0 +1,200 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{机器学习}   %课程名
+\newcommand{\nTime}{7}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
+
+    \noindent选择题目\answer[7.1]\answer[7.4]\answer[7.5]\answer[7.7]\answer[7.8]
+    
+
+    \answer[7.1]
+\begin{itemize}
+    \item 色泽
+    $$
+    \begin{aligned}
+        P(\mbox{青绿}|\mbox{好瓜})=\frac{3}{8}\\
+        P(\mbox{乌黑}|\mbox{好瓜})=\frac{1}{2}\\
+        P(\mbox{浅白}|\mbox{好瓜})=\frac{1}{8}\\
+        P(\mbox{青绿}|\mbox{坏瓜})=\frac{1}{3}\\
+        P(\mbox{乌黑}|\mbox{坏瓜})=\frac{2}{9}\\
+        P(\mbox{浅白}|\mbox{坏瓜})=\frac{4}{9}\\
+    \end{aligned}
+    $$
+    \item 根蒂
+    $$
+    \begin{aligned}
+    P(\mbox{蜷缩}|\mbox{好瓜})=\frac{5}{8}\\
+    P(\mbox{稍蜷}|\mbox{好瓜})=\frac{3}{8}\\
+    P(\mbox{硬挺}|\mbox{好瓜})={0}\\
+    P(\mbox{蜷缩}|\mbox{坏瓜})=\frac{1}{3}\\
+    P(\mbox{稍蜷}|\mbox{坏瓜})=\frac{4}{9}\\
+    P(\mbox{硬挺}|\mbox{坏瓜})=\frac{2}{9}\\
+    \end{aligned}
+    $$
+    \item 敲声
+    $$
+    \begin{aligned}
+    P(\mbox{浊响}|\mbox{好瓜})=\frac{3}{4}\\
+    P(\mbox{沉闷}|\mbox{好瓜})=\frac{1}{4}\\
+    P(\mbox{清脆}|\mbox{好瓜})={0}\\
+    P(\mbox{浊响}|\mbox{坏瓜})=\frac{4}{9}\\
+    P(\mbox{沉闷}|\mbox{坏瓜})=\frac{1}{3}\\
+    P(\mbox{清脆}|\mbox{坏瓜})=\frac{2}{9}\\
+    \end{aligned}
+    $$
+\end{itemize}
+    
+
+    \answer[7.4]
+概率取对数，连乘转化成连加即可。
+    
+
+    \answer[7.5]
+    对于最小化分类错误率的贝叶斯最优分类器，有：
+    $$
+    \begin{aligned}
+        h^*(x) &= arg\max_{c\in y}P(c|x)\\
+        &=arg\max_{c\in y}P(x|c)P(c)\\
+        &= arg\max_{c\in y}\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c))P(c)\\
+        &= arg\max_{c\in y}\ln(\frac{1}{(2\pi)^{n/2}|\Sigma|^{1/2}}\exp(-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c))P(c))\\
+        &= arg\max_{c\in y}-\frac{1}{2}(x-\mu_c)^T\Sigma^{-1}(x-\mu_c)+\ln P(c)\\
+        &= arg\max_{c\in y}x^T\Sigma^{-1}\mu_c-\frac{1}{2}\mu_c^T\Sigma^{-1}\mu_c+\ln P(c)
+    \end{aligned}
+    $$
+
+    对于二分类问题，贝叶斯决策边界可以表示为：
+    $$
+    g(x) = x^T\Sigma^{-1}(\mu_1-\mu_0)-\frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0)+\ln(\frac{P(1)}{P(0)})
+    $$
+
+    对于线性判别分析，投影界面$w=(\Sigma_0+\Sigma_1)^{-1}(\mu_1-\mu_0)$，两类别在投影面连线中点为：$w=\frac{1}{2}\Sigma^{-1}(\mu_1-\mu_0)w$，则LDA的决策边界为$g(x)=x^T\Sigma^{-1}(\mu_1-\mu_0)-\frac{1}{2}(\mu_1+\mu_0)^T\Sigma^{-1}(\mu_1-\mu_0)$，此时仅相差$\ln\frac{P(1)}{P(0)}$项，由贝叶斯学派的同等无知原则，令$P(1)=P(0)$，即可消去此项，从而得证。
+
+
+    \answer[7.7]
+规定问题为\textbf{二分类}问题，样本有$d$个属性，在第$i$个属性上的取值种类个数为$n_i$个，则最好的情况为：每个样本有$d$个属性，每个属性都满足30个的最低要求，
+则最少个数为$2\times 30\times\max_{1\leq i\leq d}\{n_i\}= 60\max_{1\leq i\leq d}\{n_i\}$
+个。
+最坏的情况为：从第一个属性开始，选取的样本满足要求后，在第二个属性上的取
+值完全相同，第三个及之后的属性以此类推。
+不难发现最坏的样本个数为：
+$$
+\begin{aligned}
+    & \qquad 2\times 30\times n_1 + 2\times 30\times(n_2 - 1) + 2\times 30\times (n_3 - 1) + \dots + 2\times 30 \times (n_d - 1)\\
+    & = 60\sum_{i=1}^d(n_i - 1) +60\\
+    & = 60\sum_{i=1}^dn_i + 60(1-d)
+\end{aligned}
+$$
+
+    \answer[7.8]
+    对于同父结构：
+    $$
+\begin{aligned}
+    P(x_3,x_4) & = \sum_{x_1}P(x_1,x_3,x_4)\\
+               & = \sum_{x_1}P(x_1)P(x_3|x_1)P(x_4|x_1)\\
+               & \neq P(x_3)P(x_4)    
+\end{aligned}
+$$
+因此$x_3,x_4$关于$x_1$边际独立不成立。
+
+对于顺序结构：
+$$
+    P(x, y, z) = P(z) P(x|z) P(y|x)
+$$
+
+给定x时：
+$$
+\begin{aligned}
+    P(y, z|x) &= \frac{P(z)P(x|z)P(y|x)}{P(x)} \\
+              &= \frac{P(x, z)P(y|x)}{P(x)}\\
+              &= {P(z|x)P(y|x)}
+\end{aligned}
+$$
+即顺序结构中$y,z$关于$x$条件独立。
+
+$x$取值未知时：
+$$
+\begin{aligned}
+    P(y,z) &= \sum_x P(x,y,z)\\
+    &= \sum_x P(z)P(x|z)P(y|x)\\
+    & \neq P(y)P(z)
+\end{aligned}
+$$
+所以$y,z$关于$x$边际独立不成立。  
+\end{document}

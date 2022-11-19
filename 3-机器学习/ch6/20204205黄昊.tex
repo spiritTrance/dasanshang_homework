@@ -1,0 +1,159 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{机器学习}   %课程名
+\newcommand{\nTime}{6}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \homeworkTitle
+    选择题目
+    \answer[6.1]
+    \answer[6.4]
+    \answer[6.6]
+    \answer[6.7]
+    \answer[6.9]
+
+    \answer[6.1]
+    显然超平面${w^Tx}+b=0$的法向量为$\boldsymbol{w}$，考虑超平面上一点$\boldsymbol{x_0}$及空间
+    中任意一点$\boldsymbol{x}$，有向量$\boldsymbol{x-x_0}$，考虑该向量与法向量的夹角$\theta$，可求
+    得点$\boldsymbol{x}$到超平面的距离$\boldsymbol{r}$为：
+    $$
+    \begin{aligned}
+r &= \parallel (\boldsymbol{x-x_0})\parallel _2cos\theta\\
+  &= \parallel (\boldsymbol{x-x_0})\parallel _2\frac{|\boldsymbol{w^T(x-x_0)}|}{\boldsymbol{\parallel w\parallel _2\parallel x-x_0\parallel _2}}\\
+  &= \frac{|\boldsymbol{w^Tx}+b-(\boldsymbol{w^Tx_0} +b)|}{\parallel \boldsymbol{w}\parallel _2}\\
+  &= \frac{|\boldsymbol{w^Tx}+b|}{\parallel \boldsymbol{w}\parallel _2}
+    \end{aligned}
+    $$
+
+    \answer[6.4]
+考虑同一个线性可分的二分类问题，当LDA的投影直线的$\boldsymbol{w}_1$与SVM的超平面$\boldsymbol{w}_2$垂直时，且满足各自的约束条件时，
+两者等价，即：
+$$
+\begin{aligned}
+    LDA&:\boldsymbol{w_1}=\boldsymbol{S_w^{-1}(\mu_0-\mu_1)}\\
+    SVM&:\boldsymbol{w_2}=\sum_{i=1}^{m}\alpha_iy_i\boldsymbol{x_i}\\
+    s.t.&\quad\boldsymbol{w_1^Tw_2}=0
+\end{aligned}
+$$
+
+    \answer[6.6]
+直观上看，SVM的最终模型仅与少数的支持向量有关。此时若噪声成为了最终的支持向量，将会严重影响模型，甚至会
+导致线性不可分。因此，SVM对噪声敏感。
+
+    \answer[6.7]
+    KKT条件为：
+$$
+\begin{cases}
+    \alpha_i(f(\boldsymbol{x}_i)-y-\epsilon -\xi_i)=0\\
+    \hat{\alpha}_i(y_i-f(\boldsymbol{x}_i)-\epsilon-\hat{\xi}_i)=0\\
+    \mu_i\xi_i=0\\
+    \hat{\mu}_i\hat{\xi}_i=0\\
+\end{cases}
+$$
+
+    \answer[6.9]
+原始的对率回归模型为：
+$$
+ln\frac{y}{1-y} = \boldsymbol{w^Tx}+b
+$$
+现在引入核函数，则核对率回归的模型如下所示：
+$$
+ln\frac{y}{1-y} = \boldsymbol{w^T\phi (x)}+b
+$$
+不妨令$\beta^T = (w^T, b)$，$\hat{x}=(x^T , 1)$，则模型变为：
+$$
+ln\frac{y}{1-y} = \boldsymbol{\beta^T\phi (\hat{x})}
+$$
+相应地，极大似然函数变为：
+$$
+l(\beta) = \sum_{i=1}^{m}(-y_i\beta^T\phi({\hat{\boldsymbol{x}})}+ln(1+e^{\boldsymbol{\beta}^T\phi (\hat{\boldsymbol{x}})}))
+$$
+由表示定理，有：
+$$
+ln\frac{y}{1-y}=h(\boldsymbol{\hat x})=\sum_{i=1}^m\alpha_i\kappa(\hat{\boldsymbol{x}},\hat{\boldsymbol{x}_i}) 
+$$
+因此，损失函数变为：
+$$
+l(\alpha)=\sum_{i=1}^m(-y_i\sum_{j=1}^m\alpha_j\kappa(\hat{x}_i,\hat{x}_j))
++\sum_{i=1}^m ln(1+e^{\sum_{j=1}^m\alpha_j\kappa(\hat{x_i},\hat{x_j})})
+$$
+对参数求导：
+$$
+\frac{\partial l}{\partial \alpha_j}=-\sum_{i=1}^m y_i\kappa(\hat{x_i},\hat{x_j})
++\sum_{i=1}^m\frac{\kappa(\hat{x_i},\hat{x_j})}{1+e^{\sum_{j=1}^m \alpha_j\kappa(\hat{x_i},\hat{x_j})}}
+e^{\sum_{j=1}^m \alpha_j\kappa(\hat{x_i},\hat{x_j})}
+$$
+按照该公式即可实现更新。
+\end{document}

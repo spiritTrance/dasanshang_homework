@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 27 00:07:26 2022
+# Process ID: 3576
+# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16304 C:\Users\15781\Desktop\homework\experiment\sysArch\lab1\doc\lab1_pred\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr
+# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/coe/mipstest.coe] -no_script -reset -force -quiet
+remove_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/coe/mipstest.coe
+export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe] -no_script -reset -force -quiet
+remove_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe
+set_property -dict [list CONFIG.Load_Init_File {true} CONFIG.Coe_File {C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/coe/mipstest.coe}] [get_ips inst_mem]
+generate_target all [get_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+export_ip_user_files -of_objects [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci]
+launch_runs -jobs 8 inst_mem_synth_1
+export_simulation -of_objects [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/rtl/ip/inst_mem/inst_mem.xci] -directory C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/doc/lab1_pred/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet

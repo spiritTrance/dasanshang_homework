@@ -1,0 +1,136 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机网络}   %课程名
+\newcommand{\nTime}{3}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+\homeworkTitle
+\answer[3-01]
+物理链路仅仅是建立了物理线路段，而数据链路还要加上实现控制数据传输协议的硬件
+软件。所以电路接通了仅限于建立起了物理信道，并不能保证点到点的无差错传输；数据
+链路接通以后，才能实现无差错传输。
+
+\answer[3-04]
+首先数据链路层的职责是保证点对点的无差错传输，而帧定界规定了数据帧的起止位置，如果不加以
+规定，接收方就无法从一串比特流中正确地提取数据帧；透明传输需要解决的问题是防止帧定界符的
+混淆，如果不加以解决，接收方可能无法正确地确定帧的起止位置；差错检测本身就是为无差错传输
+服务的。因为传输过程中可能会有差错，需要数据链路层做差错检测。
+
+\answer[3-07]
+经过计算，原数据的FCS为1110，一个1变0的原始数据对应的FCS为1101，两个1变0的原始数据对应的
+FCS为1011，因此接收端均能发现。
+由于CRC检验到错误时只丢弃帧，没有重传等机制，因此不能实现可靠传输。
+
+\answer[3-09]
+7E FE 27 7D 7D 65 7E
+
+\answer[3-10]
+经过零比特填充变为：011011111011111000
+
+接收方删除后的比特串：00011101111111111110
+
+\answer[3-13]
+主要特点：网络为一个单位所拥有；地理范围和站点数目有限。局域网没有单独设立网络层，
+局域网内共享信道，所以采用广播通信方式。而广域网的地理范围相当大，采用广播通信会造成
+通信资源的极大浪费。
+
+\answer[3-16]
+因为以太网采用曼彻斯特编码，其发送的每一位均有两个信号周期，因此为20M 波特。
+
+\answer[3-20]
+单程传播时延为5e-6s，则争用期为1e-5s，因此最短帧长为10000 bits.
+
+\answer[3-24]
+10Mb/s的以太网网段要求的最小帧为64字节（51.2$\mu s\times 10 M Bit/s=512 bits=64Bytes$），
+加上MAC帧前面加上的8字节同步码，故所花时间为576 比特时间，因为传播时延为225比特，故在225比特
+时间时，B站就能收到A站发来的
+信号。所以只有前225比特时间内能产生碰撞，若产生碰撞，那么在450比特时间时，A站就能检测
+出碰撞。而A站直到发送完毕也没有检测到碰撞，说明一定没有发生碰撞。
+
+\answer[3-25]
+首先确定争用期为512比特时间，单程传播时延为255比特时间。基本退避时间为512比特时间，那么
+A在255+48+0*510=273比特时间时重传数据，B在255+48+1*512=785比特时间重传数据，那么A传送
+的数据帧在273+255=528比特时间时候被B站收到，273+512+8=793比特时间时A站结束传输，由于B在783比特时间
+发送数据，此时A站还在传输数据，则B站需要再次采取二进制截断退避算法进行重传。
+
+\answer[3-30]
+1100Mbits/s.因为交换机的特点是每个用户独享带宽，而不像集线器那样共享带宽。
+
+\answer[3-33]
+忽略有效时间，规定交换表的每一项由二元组$<MAC\mbox{地址，接口}>$组成
+\begin{table}[htbp]
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+        动作&交换表的状态&向哪些接口转发帧&说明\\
+        \hline
+        A发送帧给D&加入$<A,1>$&2,3,4,5,6&目的地址在转发表中没有，向所有接口转发\\
+        \hline
+        D发送帧给A&加入$<D,4>$&1&目的地址在转发表中找得到，故只转发一个接口\\
+        \hline
+        E发送帧给A&加入$<E,5>$&1&目的地址在转发表中找得到，故只转发一个接口\\
+        \hline
+        A发送帧给E&不更新&5&目的地址在转发表中找得到，故只转发一个接口\\
+        \hline
+    \end{tabular}
+\end{table}
+
+\end{document}

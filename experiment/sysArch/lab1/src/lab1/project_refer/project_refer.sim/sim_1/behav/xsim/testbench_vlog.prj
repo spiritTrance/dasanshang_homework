@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../../../../../../../../mips_cpu/rtl/adder.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/alu.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/alu_decoder.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/branch_predict_global.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/branch_predict_local.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/controller.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/datapath.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/dmem.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/flopenr.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/flopenrc.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/flopr.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/floprc.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/hazard.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/imem.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/main_decoder.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/mips.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/mux2.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/mux3.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/regfile.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/sign_extend.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/sl2.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/top.sv" \
+"../../../../../../../../../../../mips_cpu/rtl/tournament_predictor.sv" \
+"../../../../../../../../../../../mips_cpu/sim/testbench.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

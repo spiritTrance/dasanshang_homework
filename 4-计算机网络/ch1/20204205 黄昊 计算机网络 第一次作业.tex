@@ -1,0 +1,93 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机网络}   %课程名
+\newcommand{\nTime}{1}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}
+
+
+\question{根据你目前的理解，请你构想一个虚拟的网络协议，并将它用你认为恰当的方式描述出来。}
+
+\begin{itemize}
+    \item 语法：有三种数据结构，一个是请求连接的数据结构，里面包括发送地址，接收地址，以及请求参数；一个是确认连接，包括请求的发送地址，接收地址，以及表示是否同意的参数，最后一个是数据，包括id，发送地址，接收地址以及数据字段。
+    \item 语义：连接发起方首先发送请求连接的控制信息，接收方返回确认连接的控制信息，发起方接收到后开始按id字段的顺序依次发送数据给接收方。
+    \item 同步：首先发送端发出请求连接的控制信息，此时有两种情况：一种是收到了确认连接的控制信息，之后开始传输数据；另外一种是没有收到，等待一段时间后重新发送请求连接的控制信息，
+    重复以上步骤。传输数据时，将数据切分成数据报，并依次赋一个id，按顺序发送出去。
+\end{itemize}
+
+\question{计算机网络体系结构分层次有什么好处？如果采用本教材的五层模型，你认为它们每个层次的主要任务是什么?}
+
+\textbf{第一问}：分层的好处在于各层之间相互独立，不同层完成不同的功能，下层屏蔽掉细节后为上层提供服务，
+易于实现和维护。分层后在结构上可以相互分开，灵活性好。
+
+\textbf{第二问}：
+\begin{itemize}
+    \item 应用层：负责应用进程间的交互。
+    \item 运输层：为两台主机的进程间通信提供通用的数据传输服务。
+    \item 网络层：负责两台主机间的可靠通信。主要职能为路由选择与转发。
+    \item 数字链路层：负责相邻节点之间的可靠通信。
+    \item 物理层：负责比特传输。
+\end{itemize}
+
+\question{互联网数据传输一般采用什么交换方式？它的特点是什么？}
+分组交换。
+特点是采用存储转发技术，即每个分组到达路由器后，首先缓存起来，等待路由器查找转发表，
+然后将分组进行转发。
+
+\question{根据你目前掌握的知识应该从哪些指标来评价一个网络的性能？}
+速率，带宽，吞吐量，时延，时延带宽积，往返时间，利用率。
+
+\end{document}

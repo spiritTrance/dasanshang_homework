@@ -1,0 +1,81 @@
+========4.3========\newline
+第 1 层，第 1 个【节点】的信息：\newline
+        分类属性：纹理\newline
+        子节点分支内容：['清晰', '稍糊', '模糊']\newline
+        子节点所含样本：[[0, 1, 2, 3, 4, 5, 7, 9, 14], [6, 8, 12, 13, 16], [10, 11, 15]]\newline
+        分类类别：0\newline
+第 2 层，第 1 个【节点】的信息：\newline
+        分类属性：密度\newline
+        子节点分支内容：['>0.3815', '<=0.3815']\newline
+        子节点所含样本：[[0, 1, 2, 3, 4, 5, 7], [9, 14]]\newline
+        分类类别：1\newline
+第 3 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 3 层，第 2 个【叶子】的信息：\newline
+        分类类别：0\newline
+第 2 层，第 2 个【节点】的信息：\newline
+        分类属性：触感\newline
+        子节点分支内容：['软粘', '硬滑']\newline
+        子节点所含样本：[[6], [8, 12, 13, 16]]\newline
+        分类类别：0\newline
+第 3 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 3 层，第 2 个【叶子】的信息：\newline
+        分类类别：0\newline
+第 2 层，第 3 个【叶子】的信息：\newline
+        分类类别：0\newline
+准确率为：100.0\%\newline
+========4.4========\newline
+origin tree\newline
+第 1 层，第 1 个【节点】的信息：\newline
+        分类属性：色泽\newline
+        子节点分支内容：['青绿', '乌黑', '浅白']\newline
+        子节点所含样本：[[0, 3, 5, 9], [1, 2, 4, 7], [6, 8]]\newline
+        分类类别：1\newline
+第 2 层，第 1 个【节点】的信息：\newline
+        分类属性：敲声\newline
+        子节点分支内容：['浊响', '清脆', '沉闷']\newline
+        子节点所含样本：[[0, 3], [5], [9]]\newline
+        分类类别：1\newline
+第 3 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 3 层，第 2 个【叶子】的信息：\newline
+        分类类别：0\newline
+第 3 层，第 3 个【叶子】的信息：\newline
+        分类类别：0\newline
+第 2 层，第 2 个【节点】的信息：\newline
+        分类属性：根蒂\newline
+        子节点分支内容：['蜷缩', '稍蜷']\newline
+        子节点所含样本：[[1, 2], [4, 7]]\newline
+        分类类别：1\newline
+第 3 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 3 层，第 2 个【节点】的信息：\newline
+        分类属性：纹理\newline
+        子节点分支内容：['稍糊', '清晰']\newline
+        子节点所含样本：[[4], [7]]\newline
+        分类类别：1\newline
+第 4 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 4 层，第 2 个【叶子】的信息：\newline
+        分类类别：0\newline
+第 2 层，第 3 个【叶子】的信息：\newline
+        分类类别：0\newline
+准确率为：28.57142857142857\%\newline
+pre prunning\newline
+第 1 层，第 1 个【叶子】的信息：\newline
+        分类类别：0\newline
+准确率为：57.14285714285714\%\newline
+post prunning\newline
+第 1 层，第 1 个【节点】的信息：\newline
+        分类属性：色泽\newline
+        子节点分支内容：['青绿', '乌黑', '浅白']\newline
+        子节点所含样本：[[0, 6], [2, 3], [1, 4, 5]]\newline
+        分类类别：1\newline
+第 2 层，第 1 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 2 层，第 2 个【叶子】的信息：\newline
+        分类类别：1\newline
+第 2 层，第 3 个【叶子】的信息：\newline
+        分类类别：0\newline
+准确率为：57.14285714285714\%\newline

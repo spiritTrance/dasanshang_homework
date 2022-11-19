@@ -1,0 +1,166 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Tue Nov  8 22:49:48 2022
+# Process ID: 24820
+# Current directory: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent53748 C:\Users\15781\Desktop\homework\experiment\sysArch\lab1\src\lab1\lab_4.xpr
+# Log file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/vivado.log
+# Journal file: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.xpr
+CRITICAL WARNING: [Project 1-19] Could not find the file 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/branchPred.v'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.1/data/ip'.
+update_compile_order -fileset sources_1
+export_ip_user_files -of_objects  [get_files C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/branchPred.v] -no_script -reset -force -quiet
+remove_files  C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/branchPred.v
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/inst_mem.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/mipstest.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+"xelab -wto 3bb9b409a0d644e9b607ef9d05d023cc --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_3 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 3bb9b409a0d644e9b607ef9d05d023cc --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_3 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:74]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:75]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:79]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:80]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:52]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:53]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:54]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'addra' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:33]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testbench_behav -key {Behavioral:sim_1:Functional:testbench} -tclbatch {testbench.tcl} -view {C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/testbench_behav.wcfg
+source testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module testbench.dut.imem.inst.native_mem_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module testbench.dut.dmem.inst.native_mem_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Simulation succeeded
+$stop called at time : 650 ns : File "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/sim/testbench.v" Line 52
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 861.359 ; gain = 21.824
+launch_runs synth_1 -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/data_mem.xci' is already up-to-date
+INFO: [IP_Flow 19-1686] Generating 'Synthesis' target for IP 'inst_mem'...
+INFO: [IP_Flow 19-4993] Using cached IP synthesis design for IP inst_mem, cache-ID = cad323d41f35824f; cache size = 3.075 MB.
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/inst_mem.xci' is already up-to-date
+[Tue Nov  8 23:17:22 2022] Launched synth_1...
+Run output will be captured here: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/synth_1/runme.log
+launch_runs impl_1 -jobs 8
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/data_mem/data_mem.xci' is already up-to-date
+INFO: [Vivado 12-4149] The synthesis checkpoint for IP 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/ip/inst_mem/inst_mem.xci' is already up-to-date
+[Tue Nov  8 23:24:14 2022] Launched impl_1...
+Run output will be captured here: C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5698] Checking validity of IPs in the design for the 'XSim' simulator...
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [Vivado 12-4795] Using compiled simulation libraries for IPs
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [USF-XSim-7] Finding pre-compiled libraries...
+INFO: [USF-XSim-11] File 'C:/Xilinx/Vivado/2019.1/data/xsim/xsim.ini' copied to run dir:'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-54] Inspecting design source files for 'testbench' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/inst_mem.mif'
+INFO: [SIM-utils-43] Exported 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim/mipstest.coe'
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj testbench_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+"xelab -wto 3bb9b409a0d644e9b607ef9d05d023cc --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_3 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2019.1
+Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/xelab.exe -wto 3bb9b409a0d644e9b607ef9d05d023cc --incr --debug typical --relax --mt 2 -L blk_mem_gen_v8_4_3 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot testbench_behav xil_defaultlib.testbench xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:74]
+WARNING: [VRFC 10-3091] actual bit length 3 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:75]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:79]
+WARNING: [VRFC 10-3091] actual bit length 2 differs from formal bit length 8 for port 'q' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/controller.v:80]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:52]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:53]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 32 for port 'd' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/dynamicBranchPredict.v:54]
+WARNING: [VRFC 10-3091] actual bit length 32 differs from formal bit length 16 for port 'addra' [C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/rtl/top.v:33]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/lab_4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "testbench_behav -key {Behavioral:sim_1:Functional:testbench} -tclbatch {testbench.tcl} -view {C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/testbench_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2019.1
+Time resolution is 1 ps
+open_wave_config C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/lab1/testbench_behav.wcfg
+source testbench.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+ Block Memory Generator module loading initial data...
+ Block Memory Generator data initialization complete.
+Block Memory Generator module testbench.dut.imem.inst.native_mem_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Block Memory Generator module testbench.dut.dmem.inst.native_mem_module.blk_mem_gen_v8_4_3_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
+Simulation succeeded
+$stop called at time : 650 ns : File "C:/Users/15781/Desktop/homework/experiment/sysArch/lab1/src/sim/testbench.v" Line 52
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'testbench_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 960.383 ; gain = 31.387
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Tue Nov  8 23:31:19 2022...
