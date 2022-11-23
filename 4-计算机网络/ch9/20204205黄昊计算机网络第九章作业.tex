@@ -1,0 +1,144 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机网络}   %课程名
+\newcommand{\nTime}{7}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
+
+\answer[9-07]
+使用CSMA/CA协议而不是CSMA/CD协议。由于隐藏站问题和暴露站问题，
+当检测到信道空闲的时候，可能会存在隐藏站问题而发生碰撞，而CSMA/CD是假定所有站点都能侦听
+到其他站点是否发送数据，这个假设在无线局域网的环境中不成立。
+
+
+
+
+\answer[9-09]
+首先考虑隐蔽站问题，考虑站点B的作用范围包括A和C，但A和C的作用范围均不包含对方。
+此时A向B发送数据时，C也向B发送数据，由于未侦听到，因而发生了碰撞。再考虑暴露站问题，
+A的作用范围是B和C，B的作用范围是A和D，A向C发送数据时，B因为监听到发送数据而不与D进行通信，但
+实际上没有问题。
+
+现在再看隐蔽站问题：加入RTS和CTS帧后，B向A发送RTS帧，A发出CTS帧后，C接收到CTS帧，并在A和B传输数据的
+时候选择不发送；再看暴露站问题：A向C发送数据，B监听到RTS但未听到CTS时，可以向D发送数据。
+这样就解决了两个问题。
+
+RTS和CTS帧也不是一定使用的，因为有开销存在。当网络环境
+简单时，便没有必要使用。
+
+
+
+
+\answer[9-14]
+保证一定的公平性，防止某个站点有大量数据发送而一直占据信道。
+
+
+
+
+\answer[9-27]
+\subanswer[(1)]
+为0.5报文/时隙
+
+
+\subanswer[(2)]
+为2报文/时隙
+
+
+\subanswer[(3)]
+为1报文/时隙
+
+
+\subanswer[(4)]
+从第1小问到第3小问分别为：1报文/时隙，2报文/时隙，2报文/时隙
+
+
+\subanswer[(5)]
+从第1小问到第3小问分别为：0.25报文/时隙，0.66报文/时隙，0.66报文/时隙
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

@@ -16,6 +16,7 @@
         "error.h": "c",
         "assert.h": "c",
         "defs.h": "c",
-        "features.h": "c"
+        "features.h": "c",
+        "cmath": "c"
     }
 }

@@ -1,0 +1,126 @@
+\documentclass{ctexart}
+% 此处引入常用包，从此行到46行均无需修改
+\usepackage[dvipsnames, svgnames, x11names]{xcolor}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{bbding}
+\usepackage{colortbl}
+\usepackage{placeins}
+\usepackage{mathpazo}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{xparse}
+\usepackage{fancyhdr}
+\usepackage[ruled,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+%代码环境设置
+\lstset{
+    numbers = none ,                                    %可选参数有none,right,left
+    breaklines ,                                        %换行有影响，不加这个则换行时从头开始
+    numberstyle = \tiny ,                               %数字大小’
+    keywordstyle = \color{blue!70} ,                    %关键字颜色
+    commentstyle =\color{black!40!white} ,              %注释颜色
+    frame = shadowbox ,                                 %阴影设置
+    rulesepcolor = \color{red!20!green!20!blue!20} ,    %阴影颜色设置
+    escapeinside =`',                                   %lst中文支持不太好，可以用这个括在中文旁边
+    basicstyle =\footnotesize\ttfamily                  %代码字体设置
+}
+
+%定义题目计数器和命令
+\newcounter{questioncnt}
+\newcounter{subquestioncnt}[questioncnt]
+\newcounter{subsubquestioncnt}[subquestioncnt]
+
+\NewDocumentCommand\question{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{questioncnt}\arabic{questioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}}}{#1}\quad#2\par}
+\NewDocumentCommand\subsubquestion{om}{\noindent\IfNoValueTF{#1}{\textcolor{blue}{\stepcounter{subsubquestioncnt}\arabic{questioncnt}.\arabic{subquestioncnt}.\arabic{subsubquestioncnt}}}{#1}\quad#2\par}
+
+%定义回答计数器和命令
+\newcounter{answercnt}
+\newcounter{subanswercnt}[answercnt]
+\newcounter{subsubanswercnt}[subanswercnt]
+
+\NewDocumentCommand\answer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{answercnt}\arabic{answercnt}}{#1}}\quad}
+\NewDocumentCommand\subanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subanswercnt}\arabic{answercnt}.\arabic{subanswercnt}}{#1}}\quad}
+\NewDocumentCommand\subsubanswer{o}{\noindent\textcolor{blue}{\IfNoValueTF{#1}{\stepcounter{subsubanswercnt}\arabic{answercnt}.\arabic{subanswercnt}.\arabic{subsubanswercnt}}{#1}}\quad}
+
+%在此处进行基本信息修改
+\newcommand{\sCourse}{计算机网络}   %课程名
+\newcommand{\nTime}{6}             %作业次数
+\newcommand{\sName}{黄昊}           %学生姓名
+\newcommand{\sNumber}{20204205}     %学号
+
+%页边距设置
+\usepackage[left=2cm,right=2cm,top=3cm,bottom=2cm]{geometry}
+
+%页眉页脚设置
+\pagestyle{fancy}
+\fancyhead[C]{\today}
+
+\newcommand{\homeworkTitle}{
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}\\
+    \end{center}}
+
+\begin{document}
+    \setcounter{answercnt}{0}
+    %标题部分修改
+    \begin{center}
+        \fontsize{16pt}{0}{\textbf{\kaishu\sCourse课程\quad第\nTime次作业}}\\
+        \fontsize{13pt}{0}{\textit{\kaishu\sName\qquad\sNumber}}
+    \end{center}
+
+    \answer[6-02]
+域名系统用于把域名转换成IP地址。本地域名服务器离用户较近，用户向其发送的查询
+请求报文如果是同一个本地ISP，则直接返回IP地址而不需要询问其他域名服务器；
+根域名服务器是最高层次的域名服务器。顶级域名服务器管理在该域名服务器注册的二级域名。
+而权限域名服务器负责其管辖范围内的域名，如果找不到，则返回下一个能找到相应域名的域名服务器的地址。
+
+
+
+
+    \answer[6-15]
+解析IP地址所需时间为$\sum_{i=1}^nRTT_i$，建立TCP连接，请求网页文件的时间为$2RTT_w$，故总时间为
+$\sum_{i=1}^nRTT_i+2RTT_w$
+
+
+
+
+    \answer[6-23]
+三个阶段分别为：连接建立、邮件传送和连接释放。
+连接建立阶段建立tcp连接，建立成功后开始进行邮件传送。邮件传送前要确认接收方是否
+准备好了接收邮件，再进行邮件发送。发送完后进行连接释放。
+
+
+
+
+    \answer[6-32]
+DHCP用于自动配置网络参数，包括IP地址，子网掩码，路由器地址，域名服务器的IP地址。
+第一次运行引导程序时没有任何IP地址、子网掩码，域名服务器的地址。
+
+
+
+
+    \answer[6-46]
+    \subanswer[(1)]
+使用TCP的原因是对传输数据的可靠性有很高要求，比如邮件；但由于TCP开销很大，故有的采用开销较少的UDP，且对
+传输可靠性要求不太高，如RIP路由选择协议，丢失后下一次会重新发送，表现比tcp好。
+    
+    \subanswer[(2)]
+    因为MIME并不是独立的协议，其是对SMTP协议的扩充，使得SMTP能够传输多种类型的数据。
+    
+    \subanswer[(3)]
+其需要使用运输层的UDP进行传送。
+
+\end{document}
